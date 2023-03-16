@@ -18,7 +18,7 @@ const styles = css`
     color: #f7f1e5;
     background: #20262e;
     line-height: 1.5;
-    font-family: Inconsolata, 'Courier New', Courier, monospace;
+    font-family: 'Inconsolata', 'Courier New', Courier, monospace;
   }
 
   a {
@@ -26,10 +26,35 @@ const styles = css`
     text-decoration: none;
   }
 
+  .accent {
+    color: #91d8e4;
+  }
+
   @media (prefers-color-scheme: dark) {
     html {
       color-scheme: dark;
     }
+  }
+
+  p {
+    font-size: 1.125rem;
+    margin: 1rem 0;
+  }
+
+  h1 {
+    font-size: 1.4rem;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+  }
+
+  h3 {
+    font-size: 1.2rem;
+  }
+
+  h4 {
+    font-size: 1.15rem;
   }
 `
 

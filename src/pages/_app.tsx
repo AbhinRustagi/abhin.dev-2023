@@ -1,8 +1,8 @@
-import '~/styles/globals.css'
 import type { AppProps } from 'next/app'
 import { DefaultSeo, NextSeo } from 'next-seo'
 import { defaultSeoProps } from '~/data'
 import { GlobalStyles } from '~/styles'
+import { Container } from '~/components/Container'
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
@@ -10,7 +10,9 @@ export default function App({ Component, pageProps }: AppProps) {
       <DefaultSeo {...defaultSeoProps} />
       <NextSeo />
       <GlobalStyles />
-      <Component {...pageProps} />
+      <Container as="main">
+        <Component {...pageProps} />
+      </Container>
     </>
   )
 }
