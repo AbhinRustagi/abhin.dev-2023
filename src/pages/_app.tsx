@@ -1,13 +1,16 @@
 import '~/styles/globals.css'
 import type { AppProps } from 'next/app'
-import { Inconsolata } from 'next/font/google'
-
-const inconsolata = Inconsolata({ subsets: ['latin'] })
+import { DefaultSeo, NextSeo } from 'next-seo'
+import { defaultSeoProps } from '~/data'
+import { GlobalStyles } from '~/styles'
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <div className={inconsolata.className}>
+    <>
+      <DefaultSeo {...defaultSeoProps} />
+      <NextSeo />
+      <GlobalStyles />
       <Component {...pageProps} />
-    </div>
+    </>
   )
 }
