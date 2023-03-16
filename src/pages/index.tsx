@@ -1,3 +1,5 @@
+import { Socials } from '~/components/Socials'
+
 export default function Home() {
   return (
     <main className="container">
@@ -8,6 +10,7 @@ export default function Home() {
         I am a software engineer, with 2 years of experience. I enjoy developing
         user-focused products.
       </p>
+      <Socials />
     </main>
   )
 }
