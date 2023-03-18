@@ -1,4 +1,5 @@
 import { css, Global } from '@emotion/react'
+import { mediaQuery } from './utils'
 
 const styles = css`
   * {
@@ -41,20 +42,21 @@ const styles = css`
     margin: 1rem 0;
   }
 
-  h1 {
-    font-size: 1.4rem;
-  }
-
-  h2 {
-    font-size: 1.3rem;
-  }
-
-  h3 {
-    font-size: 1.2rem;
-  }
-
+  h1,
+  h2,
+  h3,
   h4 {
-    font-size: 1.15rem;
+    font-size: 1.125rem;
+  }
+
+  h1 {
+    font-size: 1.25rem;
+  }
+
+  ${mediaQuery.custom(420, 'max')} {
+    p {
+      font-size: 1rem;
+    }
   }
 `
 
