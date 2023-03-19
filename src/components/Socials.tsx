@@ -2,6 +2,7 @@ import styled from '@emotion/styled'
 import type { IconType } from 'react-icons'
 import { FaEnvelope, FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa'
 import Link from 'next/link'
+import { makeKey } from '~/utils'
 
 const Wrapper = styled.div`
   display: flex;
@@ -75,7 +76,7 @@ export const Socials = () => {
         const Icon = BuildSocialIcon(social.icon)
 
         return (
-          <SocialButton key={social.name} title={social.name}>
+          <SocialButton key={makeKey(social.name)} title={social.name}>
             <StyledLink href={social.link} target="_blank" rel="noopener">
               <Icon />
             </StyledLink>

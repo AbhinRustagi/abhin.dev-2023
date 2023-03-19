@@ -1,7 +1,7 @@
 import { WorkItem } from '~/components'
 import { Socials } from '~/components/Socials'
 import { workItems } from '~/data/work'
-import kebabCase from 'lodash/kebabCase'
+import { makeKey } from '~/utils'
 
 export default function Home() {
   return (
@@ -13,7 +13,7 @@ export default function Home() {
       </p>
       <Socials />
       {workItems.map((item) => (
-        <WorkItem {...item} key={kebabCase(item.title)} />
+        <WorkItem {...item} key={makeKey(item.title, item.date)} />
       ))}
     </>
   )

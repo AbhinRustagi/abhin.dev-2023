@@ -1,8 +1,8 @@
 import styled from '@emotion/styled'
-import { kebabCase } from 'lodash'
 import { WorkItem as WorkItemProps } from '~/data/work'
 import { FiTarget } from 'react-icons/fi'
 import { css } from '@emotion/react'
+import { makeKey } from '~/utils'
 
 const Wrapper = styled.div`
   margin: 2rem 0;
@@ -59,7 +59,7 @@ export const WorkItem: React.FC<WorkItemProps> = (props) => {
         <p>{props.desc}</p>
         <TagsWrapper>
           {props.tags.map((tag) => (
-            <Tag key={kebabCase(`${props.title}-${tag}`)}>{tag}</Tag>
+            <Tag key={makeKey(props.title, props.date, tag)}>{tag}</Tag>
           ))}
         </TagsWrapper>
       </div>
