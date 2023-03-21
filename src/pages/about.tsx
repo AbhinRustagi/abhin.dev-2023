@@ -1,8 +1,3 @@
-import { WorkItem } from '~/components'
-import { Socials } from '~/components/Socials'
-import { workItems } from '~/data/work'
-import { makeKey } from '~/utils'
-
 export default function About() {
   return (
     <>
@@ -27,6 +22,12 @@ export default function About() {
         favourite things to do is watching sun rise at Coogee beach.
       </p>
       <p>Shoot me a message for a coffee or chat ✌</p>
+
+      {/* Add Readme */}
+
+      {/* Add Wakatime Stats */}
+
+      {/* Add Testimonials */}
     </>
   )
 }

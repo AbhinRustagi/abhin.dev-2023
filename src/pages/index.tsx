@@ -1,4 +1,5 @@
-import { WorkItem } from '~/components'
+import { WorkItem, WorkItemsWrapper } from '~/components'
+
 import { Socials } from '~/components/Socials'
 import { workItems } from '~/data/work'
 import { makeKey } from '~/utils'
@@ -12,9 +13,11 @@ export default function Home() {
         user-focused products.
       </p>
       <Socials />
-      {workItems.map((item) => (
-        <WorkItem {...item} key={makeKey(item.title, item.date)} />
-      ))}
+      <WorkItemsWrapper>
+        {workItems.map((item) => (
+          <WorkItem {...item} key={makeKey(item.title, item.date)} />
+        ))}
+      </WorkItemsWrapper>
     </>
   )
 }

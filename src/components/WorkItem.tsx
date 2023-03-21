@@ -3,10 +3,24 @@ import { WorkItem as WorkItemProps } from '~/data/work'
 import { FiTarget } from 'react-icons/fi'
 import { css } from '@emotion/react'
 import { makeKey } from '~/utils'
+import { mediaQuery } from '~/styles'
+
+export const WorkItemsWrapper = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  margin: 4rem 0;
+`
 
 const Wrapper = styled.div`
-  margin: 2rem 0;
-  display: flex;
+  margin-bottom: 3rem;
+
+  ${mediaQuery.tablet} {
+    flex-basis: calc(50% - 0.75rem);
+
+    &:nth-child(2n + 1) {
+      margin-right: 1.5rem;
+    }
+  }
 `
 
 const dateAndTitleWrapperStyles = css`
@@ -20,19 +34,9 @@ const dateAndTitleWrapperStyles = css`
   }
 `
 
-const iconWrapperStyles = css`
-  margin-right: 0.5rem;
-  padding-top: 0.3rem;
-
-  svg {
-    width: 18px;
-    height: 18px;
-    color: #dbe4c6;
-  }
-`
-
 const TagsWrapper = styled.div`
   display: flex;
+  flex-wrap: wrap;
 `
 
 const Tag = styled.div`
@@ -43,26 +47,22 @@ const Tag = styled.div`
   border: 1px solid gray;
   font-size: 0.75rem;
   margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
 `
 
 export const WorkItem: React.FC<WorkItemProps> = (props) => {
   return (
     <Wrapper>
-      <div css={iconWrapperStyles}>
-        <FiTarget />
+      <div css={dateAndTitleWrapperStyles}>
+        <h2>{props.title}</h2>
+        <span className="date">{props.date}</span>
       </div>
-      <div>
-        <div css={dateAndTitleWrapperStyles}>
-          <h2>{props.title}</h2>
-          <span className="date">{props.date}</span>
-        </div>
-        <p>{props.desc}</p>
-        <TagsWrapper>
-          {props.tags.map((tag) => (
-            <Tag key={makeKey(props.title, props.date, tag)}>{tag}</Tag>
-          ))}
-        </TagsWrapper>
-      </div>
+      <p>{props.desc}</p>
+      <TagsWrapper>
+        {props.tags.map((tag) => (
+          <Tag key={makeKey(props.title, props.date, tag)}>{tag}</Tag>
+        ))}
+      </TagsWrapper>
     </Wrapper>
   )
 }
