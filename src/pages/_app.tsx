@@ -4,6 +4,9 @@ import { defaultSeoProps } from '~/data'
 import { GlobalStyles } from '~/styles'
 import { Container } from '~/components/Container'
 import { InProgress } from '~/components'
+import '@fontsource/inconsolata'
+import '@fontsource/inconsolata/500.css'
+import '@fontsource/inconsolata/600.css'
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
