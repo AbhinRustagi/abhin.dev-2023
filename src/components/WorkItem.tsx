@@ -17,7 +17,7 @@ const Wrapper = styled.div`
   ${mediaQuery.tablet} {
     flex-basis: calc(50% - 0.75rem);
 
-    &:nth-child(2n + 1) {
+    &:nth-of-type(2n + 1) {
       margin-right: 1.5rem;
     }
   }
