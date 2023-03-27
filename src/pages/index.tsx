@@ -19,11 +19,6 @@ export default function Home() {
           <WorkItem {...item} key={makeKey(item.title, item.date)} />
         ))}
       </WorkItemsWrapper>
-      <div id="wcb" className="carbonbadge wcb-d"></div>
-      <Script
-        src="https://unpkg.com/website-carbon-badges@1.1.3/b.min.js"
-        defer
-      />
     </>
   )
 }
