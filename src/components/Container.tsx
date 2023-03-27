@@ -1,3 +1,4 @@
+import { css } from '@emotion/react'
 import styled from '@emotion/styled'
 import { mediaQuery } from '~/styles'
 
@@ -11,5 +12,13 @@ export const Container = styled.div`
     margin: 12rem auto;
     padding-right: 0;
     padding-left: 0;
+  }
+`
+
+export const mainStyles = css`
+  margin-top: 1rem;
+
+  ${mediaQuery.tablet} {
+    margin-top: 1rem;
   }
 `
