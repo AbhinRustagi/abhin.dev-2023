@@ -46,19 +46,27 @@ interface MenuItem {
 
 const menuItems: MenuItem[] = [
   {
-    name: 'Work',
+    name: 'work',
     path: '/#work',
   },
   {
-    name: 'About',
-    path: '/about',
+    name: 'me',
+    path: '/me',
   },
   {
-    name: 'Blog',
+    name: 'blog',
     path: '/blog',
   },
   {
-    name: 'Contact',
+    name: 'misc',
+    path: '/misc',
+  },
+  {
+    name: 'links',
+    path: '/links',
+  },
+  {
+    name: 'contact',
     path: '#contact',
   },
 ]
