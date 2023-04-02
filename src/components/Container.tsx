@@ -1,6 +1,6 @@
 import { css } from '@emotion/react'
 import styled from '@emotion/styled'
-import { mediaQuery } from '~/styles'
+import { mediaQuery } from '~/theme'
 
 export const Container = styled.div`
   max-width: 50rem; // 800px

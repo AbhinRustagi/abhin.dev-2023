@@ -1,5 +1,7 @@
 import styled from '@emotion/styled'
 import Link from 'next/link'
+import { useThemeContext } from '~/context'
+import { useTheme } from '~/hooks'
 
 const Wrapper = styled.div`
   border: 1px solid #eeeeee;
@@ -14,10 +16,13 @@ const Wrapper = styled.div`
 `
 
 export const InProgress = () => {
+  const [_, toggleTheme] = useThemeContext()
+
   return (
     <Wrapper>
       <p>
-        <strong>In Progress ⚒️</strong>
+        <button onClick={toggleTheme}>toggleTheme</button>
+        <strong>In Progress ⚒️ </strong>
       </p>
       <p>
         I am currently publicly redeveloping my personal website. Some things

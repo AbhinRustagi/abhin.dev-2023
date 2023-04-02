@@ -1,7 +1,7 @@
 import styled from '@emotion/styled'
 import { css } from '@emotion/react'
 import { Container } from './Container'
-import { mediaQuery } from '~/styles'
+import { mediaQuery } from '~/theme'
 import Link from 'next/link'
 import { makeKey } from '~/utils'
 

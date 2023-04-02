@@ -3,7 +3,7 @@ import { WorkItem as WorkItemProps } from '~/data/work'
 import { FiTarget } from 'react-icons/fi'
 import { css } from '@emotion/react'
 import { makeKey } from '~/utils'
-import { mediaQuery } from '~/styles'
+import { mediaQuery } from '~/theme'
 
 export const WorkItemsWrapper = styled.div`
   display: flex;
