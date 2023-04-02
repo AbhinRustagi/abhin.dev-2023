@@ -4,21 +4,12 @@ import { mediaQuery } from '~/theme'
 
 export const Container = styled.div`
   max-width: 50rem; // 800px
-  margin: 6rem auto;
-  padding-right: 1rem;
-  padding-left: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 2rem 1rem;
 
   ${mediaQuery.custom(800)} {
-    margin: 12rem auto;
     padding-right: 0;
     padding-left: 0;
-  }
-`
-
-export const mainStyles = css`
-  margin-top: 1rem;
-
-  ${mediaQuery.tablet} {
-    margin-top: 1rem;
   }
 `

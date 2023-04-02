@@ -2,8 +2,7 @@ import type { AppProps } from 'next/app'
 import { DefaultSeo, NextSeo } from 'next-seo'
 import { defaultSeoProps } from '~/data'
 import { GlobalStyles } from '~/theme'
-import { Container, mainStyles } from '~/components/Container'
-import { Header, InProgress } from '~/components'
+import 'react-tooltip/dist/react-tooltip.css'
 import '@fontsource/inconsolata'
 import '@fontsource/inconsolata/500.css'
 import '@fontsource/inconsolata/600.css'
@@ -16,11 +15,8 @@ export default function App({ Component, pageProps }: AppProps) {
       <NextSeo />
       <ThemeProvider>
         <GlobalStyles />
-        <Header />
-        <Container as="main" css={mainStyles}>
-          <InProgress />
-          <Component {...pageProps} />
-        </Container>
+        <Component {...pageProps} />
+        {/* <InProgress /> */}
       </ThemeProvider>
     </>
   )

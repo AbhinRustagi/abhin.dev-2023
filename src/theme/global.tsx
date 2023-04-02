@@ -1,5 +1,4 @@
 import { css, Global, Theme, useTheme } from '@emotion/react'
-import { mediaQuery } from './utils'
 
 const buildStyles = (theme: Theme) =>
   css`
@@ -7,6 +6,8 @@ const buildStyles = (theme: Theme) =>
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+      transition-duration: 0.2s;
+      transition-property: background-color, color;
     }
 
     html,
