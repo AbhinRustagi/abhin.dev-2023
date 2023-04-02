@@ -1,36 +1,18 @@
 import styled from '@emotion/styled'
 import type { IconType } from 'react-icons'
-import { FaEnvelope, FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa'
+import { FaLinkedinIn, FaTwitter, FaEnvelope, FaGithub } from 'react-icons/fa'
 import Link from 'next/link'
+import { HiDocumentText } from 'react-icons/hi'
 import { makeKey } from '~/utils'
 
 const Wrapper = styled.div`
   display: flex;
 `
 
-const SocialButton = styled.div`
-  display: flex;
-  width: 2.125rem;
-  height: 2.125rem;
-  position: relative;
-  border-radius: 0.25rem;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  background-color: #2b3b49;
-  border: 1px solid #2b3b49;
-  margin-right: 1rem;
-
-  &:hover {
-    background-color: transparent;
-    border-color: #f7f1e5;
-  }
-`
-
 const StyledLink = styled(Link)`
   display: block;
-  width: 100%;
-  height: 100%;
+  height: 2rem;
+  width: 2rem;
   padding: 0.375rem;
   cursor: pointer;
 `
@@ -53,14 +35,19 @@ const socials: Social[] = [
     icon: FaEnvelope,
   },
   {
-    name: 'LinkedIn',
-    link: 'https://www.linkedin.com/in/abhinrustagi',
-    icon: FaLinkedin,
+    name: 'CV',
+    link: '',
+    icon: HiDocumentText,
   },
   {
     name: 'Github',
     link: 'https://github.com/abhinrustagi',
     icon: FaGithub,
+  },
+  {
+    name: 'LinkedIn',
+    link: 'https://www.linkedin.com/in/abhinrustagi',
+    icon: FaLinkedinIn,
   },
   {
     name: 'Twitter',
@@ -74,13 +61,10 @@ export const Socials = () => {
     <Wrapper>
       {socials.map((social) => {
         const Icon = BuildSocialIcon(social.icon)
-
         return (
-          <SocialButton key={makeKey(social.name)} title={social.name}>
-            <StyledLink href={social.link} target="_blank" rel="noopener">
-              <Icon />
-            </StyledLink>
-          </SocialButton>
+          <StyledLink href={social.link} key={social.name}>
+            <Icon />
+          </StyledLink>
         )
       })}
     </Wrapper>
