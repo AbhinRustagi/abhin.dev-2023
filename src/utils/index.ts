@@ -8,3 +8,5 @@ export function makeKey(...args: Array<string>) {
     return ''
   }
 }
+
+export * from './analytics'
