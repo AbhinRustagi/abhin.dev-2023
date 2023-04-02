@@ -17,7 +17,7 @@ const styles = css`
 
   body {
     color: #f7f1e5;
-    background: #20262e;
+    background: #1a1a1a;
     line-height: 1.5;
     font-family: 'Inconsolata', 'Courier New', Courier, monospace;
   }
