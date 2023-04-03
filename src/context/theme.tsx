@@ -4,7 +4,11 @@ import { darkThemeColors, lightThemeColors, Theme } from '~/theme'
 
 type ThemeName = 'light' | 'dark'
 
-const ThemeContext = createContext<[ThemeName, () => void]>(['light', () => {}])
+const ThemeContext = createContext<[ThemeName, () => void, boolean]>([
+  'light',
+  () => {},
+  false,
+])
 
 export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({
   children,
@@ -26,7 +30,9 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({
   }, [themeName])
 
   return (
-    <ThemeContext.Provider value={[themeName, toggleTheme]}>
+    <ThemeContext.Provider
+      value={[themeName, toggleTheme, themeName === 'dark']}
+    >
       <EmotionThemeProvider theme={themeValues}>
         {children}
       </EmotionThemeProvider>
