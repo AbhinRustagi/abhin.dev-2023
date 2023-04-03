@@ -5,19 +5,20 @@ import '@fontsource/inter/600.css'
 import '@fontsource/inter/700.css'
 import { DefaultSeo, NextSeo } from 'next-seo'
 import type { AppProps } from 'next/app'
-import router, { useRouter } from 'next/router'
+import { useRouter } from 'next/router'
 import { useEffect } from 'react'
 import 'react-tooltip/dist/react-tooltip.css'
 import { ThemeProvider } from '~/context'
 import { defaultSeoProps } from '~/data'
 import { GlobalStyles } from '~/theme'
+import { ga } from '~/utils'
 
 export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter()
 
   useEffect(() => {
     const handleRouteChange = (url: string) => {
-      gtag.pageview(url)
+      ga.pageView(url)
     }
     router.events.on('routeChangeComplete', handleRouteChange)
     return () => {
@@ -28,7 +29,7 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <DefaultSeo {...defaultSeoProps} />
-      <NextSeo />
+      <NextSeo {...pageProps.metadata} />
       <ThemeProvider>
         <GlobalStyles />
         <Component {...pageProps} />

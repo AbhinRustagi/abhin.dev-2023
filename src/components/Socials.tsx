@@ -13,7 +13,7 @@ interface Social {
   link: string
   icon: IconType
   tooltip: string
-  hoverColor: string
+  hovercolor: string
 }
 
 const socials: Social[] = [
@@ -22,35 +22,35 @@ const socials: Social[] = [
     link: 'mailto:hi@abhin.dev',
     icon: FaEnvelope,
     tooltip: 'hi@abhin.dev',
-    hoverColor: '#57C5B6',
+    hovercolor: '#57C5B6',
   },
   {
     name: 'CV',
     link: '',
     icon: HiDocumentText,
     tooltip: 'CV',
-    hoverColor: '#FFD966',
+    hovercolor: '#FFD966',
   },
   {
     name: 'Github',
     link: 'https://github.com/abhinrustagi',
     icon: FaGithub,
     tooltip: '@AbhinRustagi',
-    hoverColor: '#4078c0',
+    hovercolor: '#4078c0',
   },
   {
     name: 'LinkedIn',
     link: 'https://www.linkedin.com/in/abhinrustagi',
     icon: FaLinkedinIn,
     tooltip: 'in/abhinrustagi',
-    hoverColor: '#0072b1',
+    hovercolor: '#0072b1',
   },
   {
     name: 'Twitter',
     link: 'https://www.twitter.com/abhinrustagi',
     icon: FaTwitter,
     tooltip: '@abhinrustagi',
-    hoverColor: '#00acee',
+    hovercolor: '#00acee',
   },
 ]
 
@@ -58,7 +58,7 @@ const Wrapper = styled.div`
   display: flex;
 `
 
-const StyledLink = styled(Link)<{ hoverColor: string }>`
+const StyledLink = styled(Link)<{ hovercolor: string }>`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -69,7 +69,7 @@ const StyledLink = styled(Link)<{ hoverColor: string }>`
   color: ${(props) => props.theme.colors.gray};
 
   &:hover {
-    color: ${(props) => props.hoverColor || props.theme.colors.title};
+    color: ${(props) => props.hovercolor || props.theme.colors.title};
   }
 `
 
@@ -98,7 +98,7 @@ export const Socials = () => {
               data-tooltip-id={idnKey}
               data-tooltip-content={social.tooltip}
               href={social.link}
-              hoverColor={social.hoverColor}
+              hovercolor={social.hovercolor}
               rel="noopener"
               target="_blank"
             >

@@ -3,14 +3,11 @@ import styled from '@emotion/styled'
 import Link from 'next/link'
 import { Socials } from '~/components/Socials'
 import { useThemeContext } from '~/context'
-import { RouteData, routes } from '~/pageConfig'
+import { routes } from '~/data'
 import { mediaQuery } from '~/theme'
 import { makeKey } from '~/utils'
 import { MdSunny } from 'react-icons/md'
-
-interface HeaderProps {
-  currentPath: string
-}
+import { PageMetadata } from '~/data'
 
 const Brand = styled.div`
   font-weight: 600;
@@ -97,25 +94,19 @@ const StyledNav = styled.nav`
   display: flex;
 `
 
-const NavMenu = ({
-  routes,
-  currentPath,
-}: {
-  routes: RouteData[]
-  currentPath: string
-}) => {
+const NavMenu = ({ currentPath }: { currentPath: string }) => {
   const [_, toggleTheme] = useThemeContext()
 
   return (
     <StyledNav>
       <StyledNavList>
         {routes.map((route) => (
-          <li key={makeKey(`header-nav-item`, route.title)}>
+          <li key={makeKey(`header-nav-item`, route.metadata.title || '')}>
             <Link
-              className={currentPath === route.path ? 'active' : ''}
-              href={route.path}
+              className={currentPath === route.metadata.path ? 'active' : ''}
+              href={route.metadata.path}
             >
-              {route.title}
+              {route.metadata.title}
             </Link>
           </li>
         ))}
@@ -130,13 +121,13 @@ const NavMenu = ({
   )
 }
 
-export const Header = ({ currentPath }: HeaderProps) => {
+export const Header = ({ metadata: { path } }: { metadata: PageMetadata }) => {
   return (
     <header css={wrapperStyles}>
       <Brand>
         <p>Abhin Rustagi</p>
       </Brand>
-      <NavMenu routes={routes} currentPath={currentPath} />
+      <NavMenu currentPath={path} />
       <Socials />
     </header>
   )

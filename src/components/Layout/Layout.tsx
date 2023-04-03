@@ -1,15 +1,12 @@
 import React from 'react'
 import { Container } from './components'
 import { Header } from './components/Header'
+import { PageData } from '~/data'
 
-interface LayoutProps {
-  currentPath: string
-}
-
-export function Layout(props: LayoutProps) {
+export function Layout(props: PageData) {
   return (
     <Container>
-      <Header currentPath={props.currentPath} />
+      <Header metadata={props.metadata} />
       {/* Header */}
       <main></main>
       {/* Footer */}

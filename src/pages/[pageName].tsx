@@ -4,22 +4,24 @@ import {
   GetStaticPropsResult,
 } from 'next'
 import { Layout } from '~/components'
-import { RouteData, routes } from '~/pageConfig'
+import { PageData, routes } from '~/data'
 
-export default function Page(props: any) {
-  return <Layout currentPath={props.path} />
+interface GetStaticPropsContextModified extends GetStaticPropsContext {
+  params: {
+    pageName: string
+  }
+}
+
+export default function Page(props: PageData) {
+  return <Layout {...props} />
 }
 
 export function getStaticProps(
-  context: GetStaticPropsContext
-): GetStaticPropsResult<RouteData> {
-  if (context.params === null) {
-    return {
-      notFound: true,
-    }
-  }
-
-  const page = routes.find((route) => route.slug === context.params?.pageName)
+  context: GetStaticPropsContextModified
+): GetStaticPropsResult<PageData> {
+  const page = routes.find(
+    (route) => route.metadata.title?.toLowerCase() === context.params.pageName
+  )
 
   if (!page) {
     return {
@@ -28,12 +30,14 @@ export function getStaticProps(
   }
 
   return {
-    props: page,
+    props: { ...page },
   }
 }
 
 export function getStaticPaths(): GetStaticPathsResult {
-  const paths = routes.map((route) => ({ params: { pageName: route.slug } }))
+  const paths = routes.map((route) => ({
+    params: { pageName: route.metadata.title?.toLowerCase() },
+  }))
 
   return {
     paths,
