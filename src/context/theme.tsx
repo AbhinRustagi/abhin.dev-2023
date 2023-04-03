@@ -5,7 +5,7 @@ import { darkThemeColors, lightThemeColors, Theme } from '~/theme'
 type ThemeName = 'light' | 'dark'
 
 const ThemeContext = createContext<[ThemeName, () => void, boolean]>([
-  'light',
+  'dark',
   () => {},
   false,
 ])
@@ -13,7 +13,7 @@ const ThemeContext = createContext<[ThemeName, () => void, boolean]>([
 export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({
   children,
 }) => {
-  const [themeName, setThemeName] = useState<ThemeName>('light')
+  const [themeName, setThemeName] = useState<ThemeName>('dark')
   const [themeValues, setThemeValues] = useState<Theme>({
     colors: lightThemeColors,
   })
