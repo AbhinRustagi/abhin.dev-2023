@@ -7,7 +7,7 @@ export interface ThemeColors {
   graySelection: string
 }
 
-export const lightThemeColors: ThemeColors = {
+const lightThemeColors: ThemeColors = {
   background: '#F0F0F0',
   title: '#282828',
   body: '#6C6C6C',
@@ -16,13 +16,18 @@ export const lightThemeColors: ThemeColors = {
   graySelection: '#e1e1e1',
 }
 
-export const darkThemeColors: ThemeColors = {
+const darkThemeColors: ThemeColors = {
   background: '#1a1a1a',
   title: '#E9E9E9',
   body: '#979797',
   gray: '#515151',
   cardBackground: '#222222',
   graySelection: '#2b2b2b',
+}
+
+export const colorPalette = {
+  light: lightThemeColors,
+  dark: darkThemeColors,
 }
 
 export interface Theme {
