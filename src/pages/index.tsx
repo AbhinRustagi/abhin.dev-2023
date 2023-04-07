@@ -4,6 +4,7 @@ import { Socials } from '~/components/Socials'
 import { workItems } from '~/data/work'
 import { makeKey } from '~/utils'
 import { routes } from '~/data'
+import { getWakatimeStats } from '~/requests'
 
 export default function Home() {
   return (
