@@ -9,7 +9,7 @@ export interface PageData {
   data: any
 }
 
-type SegmentType =
+export type SegmentType =
   | 'tricard' // Three Cards in a row
   | 'two-one' // 2 Cards with 2:1 ratio in that order
   | 'one-two' // 2 Card with 1:2 ratio in that order
@@ -18,6 +18,8 @@ type SegmentType =
 
 interface Card {
   type: ''
+  content: {}
+  metadata: {}
 }
 
 interface TriCardSegment {
@@ -50,3 +52,8 @@ export type PageLayoutConfig = (
   | FullSegment
   | TwoOneOneSegment
 )[]
+
+interface ContentObject {
+  element: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'p' | 'div-label' | 'hr' | 'img'
+  text?: string
+}
