@@ -13,7 +13,9 @@ export default function Home() {
       {/* <h1 className="accent">Hello, there. I am Abhin. 👋</h1>
       <p>
         I am a software engineer, with 2 years of experience. I enjoy developing
-        user-focused products.
+        user-focused products. I am currently building the newer version of my
+        personal website. You can find out updated information about me on my
+        socials:
       </p>
       <Socials />
       <WorkItemsWrapper>
