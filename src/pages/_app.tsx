@@ -14,9 +14,7 @@ export default function App({ Component, pageProps }: AppProps) {
       <DefaultSeo {...defaultSeoProps} />
       <NextSeo />
       <GlobalStyles />
-      <Header />
       <Container as="main" css={mainStyles}>
-        <InProgress />
         <Component {...pageProps} />
       </Container>
     </>

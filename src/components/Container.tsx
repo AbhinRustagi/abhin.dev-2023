@@ -16,9 +16,9 @@ export const Container = styled.div`
 `
 
 export const mainStyles = css`
-  margin-top: 1rem;
+  margin-top: 2rem;
 
   ${mediaQuery.tablet} {
-    margin-top: 1rem;
+    margin-top: 6rem;
   }
 `
