@@ -1,6 +1,5 @@
 export * from './Layout/components/Container'
 export * from './Layout/components/Header'
-export * from './InProgress'
 export * from './Socials'
 export * from './WorkItem'
 export * from './Layout'

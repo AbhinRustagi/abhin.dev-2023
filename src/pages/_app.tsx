@@ -33,7 +33,6 @@ export default function App({ Component, pageProps }: AppProps) {
       <ThemeProvider>
         <GlobalStyles />
         <Component {...pageProps} />
-        {/* <InProgress /> */}
       </ThemeProvider>
     </>
   )
