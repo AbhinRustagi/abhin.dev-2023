@@ -7,7 +7,11 @@ import { routes } from '~/data'
 import { mediaQuery } from '~/theme'
 import { makeKey } from '~/utils'
 import { MdSunny } from 'react-icons/md'
-import { PageMetadata } from '~/data'
+import React from 'react'
+
+interface HeaderProps {
+  path: string
+}
 
 const Brand = styled.div`
   font-weight: 600;
@@ -45,11 +49,10 @@ const StyledNavList = styled.ul`
       padding: 0.5rem 0.75rem;
       justify-content: center;
       align-items: center;
+      border-radius: 0.5rem;
 
       &.active,
       &:hover {
-        border-radius: 0.5rem;
-
         ${(props) => {
           const background = props.theme.colors.graySelection
           const color = props.theme.colors.title
@@ -69,10 +72,10 @@ const ThemeButton = styled.li`
   padding: 0.5rem 0.75rem;
   justify-content: center;
   align-items: center;
+  border-radius: 0.5rem;
   cursor: pointer;
 
   &:hover {
-    border-radius: 0.5rem;
     ${(props) => {
       const background = props.theme.colors.graySelection
       const color = props.theme.colors.title
@@ -121,13 +124,13 @@ const NavMenu = ({ currentPath }: { currentPath: string }) => {
   )
 }
 
-export const Header = ({ metadata: { path } }: { metadata: PageMetadata }) => {
+export const Header: React.FC<HeaderProps> = (props) => {
   return (
     <header css={wrapperStyles}>
       <Brand>
         <p>Abhin Rustagi</p>
       </Brand>
-      <NavMenu currentPath={path} />
+      <NavMenu currentPath={props.path} />
       <Socials />
     </header>
   )

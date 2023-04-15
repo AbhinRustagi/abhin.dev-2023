@@ -1,18 +1,22 @@
 import React from 'react'
 import { Container } from './components'
 import { Header } from './components/Header'
-import { PageData } from '~/data'
 import { Gallery, Twitter, Wakatime } from '../AppThumbs/Gallery'
 
-export function Layout(props: PageData) {
+interface LayoutProps {
+  path: string
+  children: React.ReactNode
+}
+
+export function Layout(props: LayoutProps) {
   return (
     <Container>
-      <Header metadata={props.metadata} />
-      {/* Header */}
+      <Header path={props.path} />
       <main>
         <Gallery />
         <Twitter />
         <Wakatime />
+        {props.children}
       </main>
       {/* Footer */}
     </Container>

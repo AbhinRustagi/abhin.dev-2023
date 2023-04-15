@@ -1,4 +1,5 @@
 import mixpanel from 'mixpanel-browser'
+import { isProduction } from '~/config'
 
 declare global {
   interface Window {
@@ -14,7 +15,7 @@ interface GAEventProps {
 }
 
 export const sendMixpanelEvent = (eventName: string, options?: object) => {
-  if (!window) return
+  if (!window || !isProduction) return
 
   mixpanel.init('')
   mixpanel.track(eventName, options)
