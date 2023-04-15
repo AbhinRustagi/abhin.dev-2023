@@ -7,7 +7,9 @@ import { routes } from '~/data'
 import { mediaQuery } from '~/theme'
 import { makeKey } from '~/utils'
 import { MdSunny } from 'react-icons/md'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { TiThMenu } from 'react-icons/ti'
+import { RxCross2 } from 'react-icons/rx'
 
 interface HeaderProps {
   path: string
@@ -30,13 +32,14 @@ const wrapperStyles = css`
   }
 
   ${mediaQuery.tablet} {
-    margin-bottom: 2rem;
+    margin-bottom: 5rem;
   }
 `
 
 const StyledNavList = styled.ul`
   list-style: none;
   display: flex;
+  flex-direction: column;
 
   li {
     display: block;
@@ -45,8 +48,8 @@ const StyledNavList = styled.ul`
 
     a {
       display: block;
-      text-align: center;
-      padding: 0.5rem 0.75rem;
+      text-align: left;
+      padding: 0.5rem 1rem;
       justify-content: center;
       align-items: center;
       border-radius: 0.5rem;
@@ -65,15 +68,27 @@ const StyledNavList = styled.ul`
       }
     }
   }
+
+  ${mediaQuery.tablet} {
+    flex-direction: row;
+
+    li {
+      a {
+        text-align: center;
+        padding: 0.5rem 0.75rem;
+      }
+    }
+  }
 `
 
 const ThemeButton = styled.li`
   display: flex;
   padding: 0.5rem 0.75rem;
-  justify-content: center;
   align-items: center;
   border-radius: 0.5rem;
   cursor: pointer;
+  width: max-content;
+  margin: 2rem 0 5rem;
 
   &:hover {
     ${(props) => {
@@ -88,20 +103,98 @@ const ThemeButton = styled.li`
   }
 
   svg {
-    width: 1rem;
-    height: 1rem;
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+
+  ${mediaQuery.tablet} {
+    width: 100%;
+    margin: 0;
+    justify-content: center;
+    svg {
+      width: 1rem;
+      height: 1rem;
+    }
   }
 `
 
-const StyledNav = styled.nav`
-  display: flex;
+const StyledNav = styled.nav<{ open: boolean }>`
+  ${(props) => {
+    const isOpen = props.open
+    const openStateStyles = css`
+      position: absolute;
+      z-index: 99;
+      padding: 3rem 2rem;
+      width: 100vw;
+      height: 100vh;
+      top: 0;
+      left: 0;
+      background: ${props.theme.colors.background};
+    `
+    const closedStateStyles = css`
+      display: none;
+    `
+
+    return isOpen ? openStateStyles : closedStateStyles
+  }}
+
+  ${mediaQuery.tablet} {
+    display: flex;
+  }
 `
 
-const NavMenu = ({ currentPath }: { currentPath: string }) => {
+const NavMenuSocialsWrapper = styled.div`
+  display: block;
+
+  ${mediaQuery.tablet} {
+    display: none;
+  }
+`
+
+const HeaderSocialsWrapper = styled.div`
+  display: none;
+
+  ${mediaQuery.tablet} {
+    display: block;
+  }
+`
+
+const NavMenuBtn = styled(TiThMenu)`
+  width: 1.5rem;
+  height: 1.5rem;
+  cursor: pointer;
+
+  ${mediaQuery.tablet} {
+    display: none;
+  }
+`
+
+const CloseNavMenuBtn = styled(RxCross2)`
+  width: 1.5rem;
+  height: 1.5rem;
+  cursor: pointer;
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+
+  ${mediaQuery.tablet} {
+    display: none;
+  }
+`
+
+const NavMenu = ({
+  currentPath,
+  open,
+  toggle,
+}: {
+  currentPath: string
+  open: boolean
+  toggle: () => void
+}) => {
   const [_, toggleTheme] = useThemeContext()
 
   return (
-    <StyledNav>
+    <StyledNav open={open}>
       <StyledNavList>
         {routes.map((route) => (
           <li key={makeKey(`header-nav-item`, route.metadata.title || '')}>
@@ -120,18 +213,35 @@ const NavMenu = ({ currentPath }: { currentPath: string }) => {
       >
         <MdSunny />
       </ThemeButton>
+      <NavMenuSocialsWrapper>
+        <Socials />
+      </NavMenuSocialsWrapper>
+      <CloseNavMenuBtn onClick={toggle} />
     </StyledNav>
   )
 }
 
 export const Header: React.FC<HeaderProps> = (props) => {
+  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false)
+
+  useEffect(() => {
+    isMenuOpen
+      ? (document.body.style.overflow = 'hidden')
+      : (document.body.style.overflow = 'auto')
+  }, [isMenuOpen])
+
+  const toggle = () => setIsMenuOpen((isMenuOpen) => !isMenuOpen)
+
   return (
     <header css={wrapperStyles}>
       <Brand>
         <p>Abhin Rustagi</p>
       </Brand>
-      <NavMenu currentPath={props.path} />
-      <Socials />
+      <NavMenuBtn onClick={toggle} />
+      <NavMenu open={isMenuOpen} currentPath={props.path} toggle={toggle} />
+      <HeaderSocialsWrapper>
+        <Socials />
+      </HeaderSocialsWrapper>
     </header>
   )
 }

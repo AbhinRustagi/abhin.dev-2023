@@ -8,6 +8,9 @@ const nextConfig = {
   env: {
     WAKATIME_API_KEY: process.env.WAKATIME_API_KEY,
   },
+  images: {
+    domains: ['images.unsplash.com'],
+  },
 }
 
 module.exports = nextConfig

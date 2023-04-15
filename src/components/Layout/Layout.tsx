@@ -12,12 +12,7 @@ export function Layout(props: LayoutProps) {
   return (
     <Container>
       <Header path={props.path} />
-      <main>
-        <Gallery />
-        <Twitter />
-        <Wakatime />
-        {props.children}
-      </main>
+      <main>{props.children}</main>
       {/* Footer */}
     </Container>
   )

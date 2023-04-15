@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import { makeKey } from '~/utils'
+import { BaseCard } from './BaseCard'
 
 interface BlogCardProps {
   title: string
@@ -27,16 +28,12 @@ const ImageWrapper = styled.div`
   z-index: 2;
 `
 
-const CardBodyWrapper = styled.div`
-  border-radius: 0.5rem;
-  position: relative;
+const CardBodyWrapper = styled(BaseCard)`
   margin-top: -1rem;
   z-index: 4;
   flex-basis: 70%;
-  padding: 1.25rem;
   flex-direction: column;
   justify-content: space-between;
-  background-color: ${(props) => props.theme.colors.cardBackground};
 `
 
 export const BlogCard: React.FC<BlogCardProps> = (props) => {
