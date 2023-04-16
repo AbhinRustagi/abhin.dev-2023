@@ -2,7 +2,7 @@ import { css } from '@emotion/react'
 import styled from '@emotion/styled'
 import Link from 'next/link'
 import { Socials } from '~/components/Socials'
-import { useThemeContext } from '~/context'
+import { useMenuStateContext, useThemeContext } from '~/context'
 import { routes } from '~/data'
 import { mediaQuery } from '~/theme'
 import { makeKey } from '~/utils'
@@ -222,15 +222,13 @@ const NavMenu = ({
 }
 
 export const Header: React.FC<HeaderProps> = (props) => {
-  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false)
+  const [isMenuOpen, toggle] = useMenuStateContext()
 
   useEffect(() => {
     isMenuOpen
       ? (document.body.style.overflow = 'hidden')
       : (document.body.style.overflow = 'auto')
   }, [isMenuOpen])
-
-  const toggle = () => setIsMenuOpen((isMenuOpen) => !isMenuOpen)
 
   return (
     <header css={wrapperStyles}>

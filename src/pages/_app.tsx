@@ -8,9 +8,9 @@ import type { AppProps } from 'next/app'
 import { useRouter } from 'next/router'
 import { useEffect } from 'react'
 import 'react-tooltip/dist/react-tooltip.css'
-import { Container, Header, Layout } from '~/components'
+import { Layout } from '~/components'
 import { isProduction } from '~/config'
-import { ThemeProvider } from '~/context'
+import { MenuStateContextProvider, ThemeProvider } from '~/context'
 import { defaultSeoProps } from '~/data'
 import { GlobalStyles } from '~/theme'
 import { ga } from '~/utils'
@@ -35,10 +35,12 @@ export default function App({ Component, pageProps }: AppProps) {
       <DefaultSeo {...defaultSeoProps} />
       <NextSeo {...pageProps.metadata} />
       <ThemeProvider>
-        <GlobalStyles />
-        <Layout path={router.pathname}>
-          <Component {...pageProps} />
-        </Layout>
+        <MenuStateContextProvider>
+          <GlobalStyles />
+          <Layout path={router.pathname}>
+            <Component {...pageProps} />
+          </Layout>
+        </MenuStateContextProvider>
       </ThemeProvider>
     </>
   )
