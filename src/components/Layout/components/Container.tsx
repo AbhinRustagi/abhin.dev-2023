@@ -8,7 +8,7 @@ export const Container = styled.div`
   margin-right: auto;
   padding: 2rem 1rem;
 
-  ${mediaQuery.custom(800)} {
+  ${mediaQuery.custom(820)} {
     padding-right: 0;
     padding-left: 0;
   }

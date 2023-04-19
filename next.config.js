@@ -9,7 +9,7 @@ const nextConfig = {
     WAKATIME_API_KEY: process.env.WAKATIME_API_KEY,
   },
   images: {
-    domains: ['images.unsplash.com'],
+    domains: ['images.unsplash.com', 'res.cloudinary.com'],
   },
 }
 
