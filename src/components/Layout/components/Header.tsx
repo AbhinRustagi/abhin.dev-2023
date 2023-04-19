@@ -15,7 +15,7 @@ interface HeaderProps {
   path: string
 }
 
-const Brand = styled.div`
+const BrandWrapper = styled.div`
   font-weight: 600;
   font-size: 1.125rem;
   color: ${(props) => props.theme.colors.title};
@@ -221,6 +221,14 @@ const NavMenu = ({
   )
 }
 
+const Brand = () => (
+  <BrandWrapper>
+    <p>
+      <Link href="/">Abhin Rustagi</Link>
+    </p>
+  </BrandWrapper>
+)
+
 export const Header: React.FC<HeaderProps> = (props) => {
   const [isMenuOpen, toggle] = useMenuStateContext()
 
@@ -232,9 +240,7 @@ export const Header: React.FC<HeaderProps> = (props) => {
 
   return (
     <header css={wrapperStyles}>
-      <Brand>
-        <p>Abhin Rustagi</p>
-      </Brand>
+      <Brand />
       <NavMenuBtn onClick={toggle} />
       <NavMenu open={isMenuOpen} currentPath={props.path} toggle={toggle} />
       <HeaderSocialsWrapper>
