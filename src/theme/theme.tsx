@@ -5,6 +5,8 @@ export interface ThemeColors {
   cardBackground: string
   gray: string
   graySelection: string
+  accent: string
+  accentTranslucent: string
 }
 
 const lightThemeColors: ThemeColors = {
@@ -14,6 +16,8 @@ const lightThemeColors: ThemeColors = {
   cardBackground: '#E6E6E6',
   gray: '#afafaf',
   graySelection: '#e1e1e1',
+  accentTranslucent: '#007cff26',
+  accent: '#007cff',
 }
 
 const darkThemeColors: ThemeColors = {
@@ -23,6 +27,8 @@ const darkThemeColors: ThemeColors = {
   gray: '#515151',
   cardBackground: '#222222',
   graySelection: '#2b2b2b',
+  accentTranslucent: '#007cff26',
+  accent: '#007cff',
 }
 
 export const colorPalette = {
