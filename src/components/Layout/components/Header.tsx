@@ -122,24 +122,34 @@ const StyledNav = styled.nav<{ open: boolean }>`
   ${(props) => {
     const isOpen = props.open
     const openStateStyles = css`
-      position: absolute;
-      z-index: 99;
-      padding: 3rem 2rem;
-      width: 100vw;
+      bottom: 0;
       height: 100vh;
-      top: 0;
-      left: 0;
+      padding: 3rem 2rem;
       background: ${props.theme.colors.background};
     `
     const closedStateStyles = css`
-      display: none;
+      height: 0;
     `
 
-    return isOpen ? openStateStyles : closedStateStyles
+    return css`
+      display: block;
+      width: 100vw;
+      top: 0;
+      left: 0;
+      right: 0;
+      position: absolute;
+      z-index: 99;
+      overflow: hidden;
+      ${isOpen ? openStateStyles : closedStateStyles}
+    `
   }}
+  transition: 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955);
 
   ${mediaQuery.tablet} {
     display: flex;
+    position: relative;
+    width: max-content;
+    height: max-content;
   }
 `
 

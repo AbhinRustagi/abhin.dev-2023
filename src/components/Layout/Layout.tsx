@@ -1,7 +1,6 @@
 import React from 'react'
 import { Container } from './components'
 import { Header } from './components/Header'
-import { Gallery, Twitter, Wakatime } from '../AppThumbs/Gallery'
 
 interface LayoutProps {
   path: string

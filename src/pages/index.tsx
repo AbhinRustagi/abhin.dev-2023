@@ -1,11 +1,11 @@
 import { GetStaticPropsContext } from 'next'
 
 export default function Home(props: any) {
-  return <></>
+  return <>hello!</>
 }
 
-export function getStaticProps(context: GetStaticPropsContext) {
-  return {
-    props: {},
-  }
-}
+// export function getStaticProps(context: GetStaticPropsContext) {
+//   return {
+//     props: {},
+//   }
+// }
