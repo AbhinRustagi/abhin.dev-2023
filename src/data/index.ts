@@ -1,7 +1,18 @@
-export * from './routes'
-export * from './seo'
+import * as blog from './blog'
+import * as books from './books'
+import * as colophon from './colophon'
+import * as home from './home'
+import * as insider from './insider'
+import * as me from './me'
+import * as uses from './uses'
 
-export const imageUrls = {
-  headshot:
-    'https://res.cloudinary.com/abhinrustagi/image/upload/v1675794140/IMG_3171_copy_1_ybq4lh.jpg',
-}
+export const menus = [
+  me.metadata,
+  blog.metadata,
+  insider.metadata,
+  books.metadata,
+]
+
+export * from './seo'
+export * from './socials'
+export { home, me, blog, books, colophon, uses, insider }

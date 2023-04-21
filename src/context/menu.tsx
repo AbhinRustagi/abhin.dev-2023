@@ -1,11 +1,10 @@
 import { useRouter } from 'next/router'
 import { createContext, useContext, useEffect, useState } from 'react'
+import { ReactFC } from '~/types'
 
 const MenuStateContext = createContext<[boolean, () => void]>([false, () => {}])
 
-export const MenuStateContextProvider: React.FC<{
-  children: React.ReactNode
-}> = ({ children }) => {
+export const MenuStateContextProvider: ReactFC<{}> = ({ children }) => {
   const router = useRouter()
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false)
   const toggleMenuState = () => setIsMenuOpen((isMenuOpen) => !isMenuOpen)

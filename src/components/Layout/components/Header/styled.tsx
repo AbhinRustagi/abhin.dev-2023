@@ -1,27 +1,16 @@
 import { css } from '@emotion/react'
 import styled from '@emotion/styled'
-import Link from 'next/link'
-import { Socials } from '~/components/Socials'
-import { useMenuStateContext, useThemeContext } from '~/context'
-import { routes } from '~/data'
-import { mediaQuery } from '~/theme'
-import { makeKey } from '~/utils'
-import { MdSunny } from 'react-icons/md'
-import React, { useEffect, useState } from 'react'
-import { TiThMenu } from 'react-icons/ti'
 import { RxCross2 } from 'react-icons/rx'
+import { TiThMenu } from 'react-icons/ti'
+import { mediaQuery } from '~/theme'
 
-interface HeaderProps {
-  path: string
-}
-
-const BrandWrapper = styled.div`
+export const BrandWrapper = styled.div`
   font-weight: 600;
   font-size: 1.125rem;
   color: ${(props) => props.theme.colors.title};
 `
 
-const wrapperStyles = css`
+export const wrapperStyles = css`
   margin-bottom: 2rem;
   display: flex;
   justify-content: space-between;
@@ -36,7 +25,7 @@ const wrapperStyles = css`
   }
 `
 
-const StyledNavList = styled.ul`
+export const StyledNavList = styled.ul`
   list-style: none;
   display: flex;
   flex-direction: column;
@@ -81,7 +70,7 @@ const StyledNavList = styled.ul`
   }
 `
 
-const ThemeButton = styled.li`
+export const ThemeButton = styled.li`
   display: flex;
   padding: 0.5rem 0.75rem;
   align-items: center;
@@ -118,7 +107,7 @@ const ThemeButton = styled.li`
   }
 `
 
-const StyledNav = styled.nav<{ open: boolean }>`
+export const StyledNav = styled.nav<{ open: boolean }>`
   ${(props) => {
     const isOpen = props.open
     const openStateStyles = css`
@@ -153,7 +142,7 @@ const StyledNav = styled.nav<{ open: boolean }>`
   }
 `
 
-const NavMenuSocialsWrapper = styled.div`
+export const NavMenuSocialsWrapper = styled.div`
   display: block;
 
   ${mediaQuery.tablet} {
@@ -161,7 +150,7 @@ const NavMenuSocialsWrapper = styled.div`
   }
 `
 
-const HeaderSocialsWrapper = styled.div`
+export const HeaderSocialsWrapper = styled.div`
   display: none;
 
   ${mediaQuery.tablet} {
@@ -169,7 +158,7 @@ const HeaderSocialsWrapper = styled.div`
   }
 `
 
-const NavMenuBtn = styled(TiThMenu)`
+export const NavMenuBtn = styled(TiThMenu)`
   width: 1.5rem;
   height: 1.5rem;
   cursor: pointer;
@@ -179,7 +168,7 @@ const NavMenuBtn = styled(TiThMenu)`
   }
 `
 
-const CloseNavMenuBtn = styled(RxCross2)`
+export const CloseNavMenuBtn = styled(RxCross2)`
   width: 1.5rem;
   height: 1.5rem;
   cursor: pointer;
@@ -191,71 +180,3 @@ const CloseNavMenuBtn = styled(RxCross2)`
     display: none;
   }
 `
-
-const NavMenu = ({
-  currentPath,
-  open,
-  toggle,
-}: {
-  currentPath: string
-  open: boolean
-  toggle: () => void
-}) => {
-  const [_, toggleTheme] = useThemeContext()
-
-  return (
-    <StyledNav open={open}>
-      <StyledNavList>
-        {routes.map((route) => (
-          <li key={makeKey(`header-nav-item`, route.metadata.title || '')}>
-            <Link
-              className={currentPath === route.metadata.path ? 'active' : ''}
-              href={route.metadata.path}
-            >
-              {route.metadata.title}
-            </Link>
-          </li>
-        ))}
-      </StyledNavList>
-      <ThemeButton
-        key={makeKey(`header-nav-item`, 'theme')}
-        onClick={toggleTheme}
-      >
-        <MdSunny />
-      </ThemeButton>
-      <NavMenuSocialsWrapper>
-        <Socials />
-      </NavMenuSocialsWrapper>
-      <CloseNavMenuBtn onClick={toggle} />
-    </StyledNav>
-  )
-}
-
-const Brand = () => (
-  <BrandWrapper>
-    <p>
-      <Link href="/">Abhin Rustagi</Link>
-    </p>
-  </BrandWrapper>
-)
-
-export const Header: React.FC<HeaderProps> = (props) => {
-  const [isMenuOpen, toggle] = useMenuStateContext()
-
-  useEffect(() => {
-    isMenuOpen
-      ? (document.body.style.overflow = 'hidden')
-      : (document.body.style.overflow = 'auto')
-  }, [isMenuOpen])
-
-  return (
-    <header css={wrapperStyles}>
-      <Brand />
-      <NavMenuBtn onClick={toggle} />
-      <NavMenu open={isMenuOpen} currentPath={props.path} toggle={toggle} />
-      <HeaderSocialsWrapper>
-        <Socials />
-      </HeaderSocialsWrapper>
-    </header>
-  )
-}

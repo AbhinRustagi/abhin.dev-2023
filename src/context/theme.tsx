@@ -1,6 +1,7 @@
-import { createContext, useContext, useEffect, useState } from 'react'
 import { ThemeProvider as EmotionThemeProvider } from '@emotion/react'
-import { colorPalette, Theme } from '~/theme'
+import { createContext, useContext, useEffect, useState } from 'react'
+import { Theme, colorPalette } from '~/theme'
+import { ReactFC } from '~/types'
 
 type ThemeName = 'light' | 'dark'
 
@@ -10,9 +11,7 @@ const ThemeContext = createContext<[ThemeName, () => void, boolean]>([
   true,
 ])
 
-export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({
-  children,
-}) => {
+export const ThemeProvider: ReactFC<{}> = ({ children }) => {
   const [themeName, setThemeName] = useState<ThemeName>('dark')
   const [themeValues, setThemeValues] = useState<Theme>({
     colors: colorPalette[themeName],
