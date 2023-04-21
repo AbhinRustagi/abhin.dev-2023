@@ -13,6 +13,16 @@ export const menus = [
   books.metadata,
 ]
 
+export const footerInformationMenu = [
+  home.metadata,
+  me.metadata,
+  blog.metadata,
+  insider.metadata,
+  books.metadata,
+  colophon.metadata,
+  uses.metadata,
+]
+
 export * from './seo'
 export * from './socials'
 export { home, me, blog, books, colophon, uses, insider }
