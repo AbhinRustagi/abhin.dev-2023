@@ -1,14 +1,9 @@
 const metadata = {
   path: '/me',
   title: 'Me',
+  description: '',
 }
 
-const data = [
-  {
-    id: 'me-left-about',
-  },
-  {},
-  {},
-]
+const data = []
 
 export { metadata, data }
