@@ -1,6 +1,6 @@
 import { GetStaticPropsContext } from 'next'
 
-export default function Misc(props: any) {
+export default function Uses(props: any) {
   return <></>
 }
 

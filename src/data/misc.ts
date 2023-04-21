@@ -1,6 +1,6 @@
 const metadata = {
-  path: '/misc',
-  title: 'Misc',
+  path: '/insider',
+  title: 'Insider',
 }
 
 const data = {}
