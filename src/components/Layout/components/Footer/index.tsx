@@ -1,4 +1,3 @@
-import { Socials } from '~/components/Socials'
 import { Wrapper, Row, Col } from './styled'
 import { footerInformationMenu, socials } from '~/data'
 import Link from 'next/link'

@@ -19,8 +19,8 @@ export const footerInformationMenu = [
   blog.metadata,
   insider.metadata,
   books.metadata,
-  colophon.metadata,
   uses.metadata,
+  colophon.metadata,
 ]
 
 export * from './seo'

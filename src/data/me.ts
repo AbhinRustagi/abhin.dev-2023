@@ -4,6 +4,4 @@ const metadata = {
   description: '',
 }
 
-const data = []
-
-export { metadata, data }
+export { metadata }
