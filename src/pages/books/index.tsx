@@ -1,4 +1,5 @@
 import { GetStaticPropsContext } from 'next'
+import { books } from '~/data'
 
 export default function Books(props: any) {
   return <></>
@@ -6,6 +7,6 @@ export default function Books(props: any) {
 
 export function getStaticProps(context: GetStaticPropsContext) {
   return {
-    props: {},
+    props: { ...books },
   }
 }

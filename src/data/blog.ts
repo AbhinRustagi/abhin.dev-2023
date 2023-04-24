@@ -1,6 +1,7 @@
 const metadata = {
   path: '/blog',
-  title: 'Blog',
+  name: 'Blog',
+  title: 'Insights, ideas & inspiration',
 }
 
 const data = {}

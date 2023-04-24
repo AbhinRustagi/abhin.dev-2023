@@ -15,7 +15,7 @@ const data = [
   {
     title: 'Information',
     items: footerInformationMenu,
-    titleKey: 'title',
+    titleKey: 'name',
     linkKey: 'path',
   },
   {

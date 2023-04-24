@@ -6,12 +6,7 @@ import * as insider from './insider'
 import * as me from './me'
 import * as uses from './uses'
 
-export const menus = [
-  me.metadata,
-  blog.metadata,
-  insider.metadata,
-  books.metadata,
-]
+export const menus = [me.metadata, blog.metadata, insider.metadata]
 
 export const footerInformationMenu = [
   home.metadata,

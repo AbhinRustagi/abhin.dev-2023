@@ -10,8 +10,8 @@ export const MainHeader = styled.div`
 
 export const ImageWrapper = styled.div`
   margin-bottom: 2rem;
-  width: 4rem;
-  height: 4rem;
+  width: 8rem;
+  height: 8rem;
   border-radius: 1rem;
   overflow: hidden;
   position: relative;
@@ -21,5 +21,5 @@ export const Description = styled.p`
   font-size: 1.125rem;
   font-weight: 500;
   line-height: 1.75;
-  margin-top: 2rem;
+  margin-top: 1rem;
 `

@@ -1,4 +1,5 @@
 import { GetStaticPropsContext } from 'next'
+import { colophon } from '~/data'
 
 export default function Colophon(props: any) {
   return <></>
@@ -6,6 +7,6 @@ export default function Colophon(props: any) {
 
 export function getStaticProps(context: GetStaticPropsContext) {
   return {
-    props: {},
+    props: { ...colophon },
   }
 }

@@ -1,6 +1,7 @@
 const metadata = {
   path: '/books',
-  title: 'Books',
+  name: 'Bookshelf',
+  title: 'Bookshelf',
 }
 
 const data = {}

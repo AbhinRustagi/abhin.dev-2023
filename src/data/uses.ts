@@ -1,5 +1,6 @@
 const metadata = {
   path: '/uses',
+  name: 'Uses',
   title: 'Uses',
 }
 

@@ -39,7 +39,7 @@ const NavMenu: NavMenuComponent = ({ currentPath, open, toggle }) => {
               className={currentPath === menuItem.path ? 'active' : ''}
               href={menuItem.path}
             >
-              {menuItem.title}
+              {menuItem.name}
             </Link>
           </li>
         ))}

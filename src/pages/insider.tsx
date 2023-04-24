@@ -1,4 +1,5 @@
 import { GetStaticPropsContext } from 'next'
+import { insider } from '~/data'
 
 export default function Insider(props: any) {
   return <></>
@@ -6,6 +7,6 @@ export default function Insider(props: any) {
 
 export function getStaticProps(context: GetStaticPropsContext) {
   return {
-    props: {},
+    props: { ...insider },
   }
 }

@@ -1,9 +1,11 @@
+import { home } from '~/data'
+
 export default function Home(props: any) {
   return <></>
 }
 
-// export function getStaticProps(context: GetStaticPropsContext) {
-//   return {
-//     props: {},
-//   }
-// }
+export function getStaticProps() {
+  return {
+    props: { ...home },
+  }
+}

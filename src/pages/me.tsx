@@ -1,11 +1,11 @@
-import { GetStaticPropsContext } from 'next'
+import { me } from '~/data'
 
 export default function Me(props: any) {
   return <></>
 }
 
-export function getStaticProps(context: GetStaticPropsContext) {
+export function getStaticProps() {
   return {
-    props: {},
+    props: { ...me },
   }
 }
