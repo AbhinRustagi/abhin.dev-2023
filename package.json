@@ -38,7 +38,7 @@
     "@types/lodash": "^4.14.191",
     "@types/mixpanel-browser": "^2.38.1",
     "@types/node": "18.14.6",
-    "@types/react": "18.0.28",
+    "@types/react": "18.0.11",
     "@types/react-dom": "18.0.11",
     "@types/react-icons": "^3.0.0",
     "husky": "^8.0.0",
