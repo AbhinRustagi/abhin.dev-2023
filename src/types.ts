@@ -19,7 +19,7 @@ interface NavMenuProps {
 
 export type NavMenuComponent = ReactFC<NavMenuProps>
 
-// Socials
+// Social
 export interface SocialItem {
   name: string
   link: string
@@ -27,3 +27,13 @@ export interface SocialItem {
   tooltip: string
   hovercolor: string
 }
+
+// Main
+
+interface MainProps {
+  title?: string
+  description?: string
+  image?: string
+}
+
+export type MainComponent = ReactFC<MainProps>

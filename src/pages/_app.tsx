@@ -28,11 +28,11 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <DefaultSeo {...defaultSeoProps} />
-      <NextSeo {...pageProps.metadata} />
+      <NextSeo {...pageProps.seo} />
       <ThemeProvider>
         <MenuStateContextProvider>
           <GlobalStyles />
-          <Layout path={router.pathname}>
+          <Layout path={router.pathname} {...pageProps?.metadata}>
             <Component {...pageProps} />
           </Layout>
         </MenuStateContextProvider>
