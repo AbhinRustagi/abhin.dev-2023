@@ -3,6 +3,7 @@ import type { AppProps } from 'next/app'
 import { useRouter } from 'next/router'
 import { useEffect } from 'react'
 import 'react-tooltip/dist/react-tooltip.css'
+import { ErrorBoundary } from '~/components'
 import Layout from '~/components/Layout'
 import { isProduction } from '~/config'
 import { MenuStateContextProvider, ThemeProvider } from '~/context'
@@ -26,7 +27,7 @@ export default function App({ Component, pageProps }: AppProps) {
   }, [router.events])
 
   return (
-    <>
+    <ErrorBoundary>
       <DefaultSeo {...defaultSeoProps} />
       <NextSeo {...pageProps.seo} />
       <ThemeProvider>
@@ -37,6 +38,6 @@ export default function App({ Component, pageProps }: AppProps) {
           </Layout>
         </MenuStateContextProvider>
       </ThemeProvider>
-    </>
+    </ErrorBoundary>
   )
 }
