@@ -1,5 +1,5 @@
 import { Wrapper, Row, Col } from './styled'
-import { footerInformationMenu, socials } from '~/data'
+import { footerInformationMenu, footerSocials } from '~/data'
 import Link from 'next/link'
 import { makeKey } from '~/utils'
 
@@ -22,7 +22,7 @@ export const Footer = () => {
         </Col.wrapper>
         <Col.wrapper>
           <Col.title>Social</Col.title>
-          {socials.map((social) => (
+          {footerSocials.map((social) => (
             <Col.item key={makeKey('footer-social', social.name)}>
               <Link href={social.link}>{social.name}</Link>
             </Col.item>
