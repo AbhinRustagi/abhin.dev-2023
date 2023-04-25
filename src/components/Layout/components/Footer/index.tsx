@@ -11,7 +11,7 @@ interface ColumnProps {
   linkKey: string
 }
 
-const data = [
+const data: ColumnProps[] = [
   {
     title: 'Information',
     items: footerInformationMenu,
@@ -51,7 +51,13 @@ export const Footer = () => {
       </p>
       <Row>
         {data.map((col) => (
-          <Column key={makeKey('footer-col', col.title)} {...col} />
+          <Column
+            key={makeKey('footer-col', col.title)}
+            title={col.title}
+            titleKey={col.titleKey}
+            items={col.items}
+            linkKey={col.linkKey}
+          />
         ))}
       </Row>
       <small>&copy; Abhin Rustagi | 2023</small>
