@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, Footer, Header, Main } from './components'
+import { Container, Header, Main } from './components'
 
 interface LayoutProps {
   path: string
@@ -14,7 +14,7 @@ export default function Layout(props: LayoutProps) {
     <Container>
       <Header path={props.path} />
       <Main {...props}>{props.children}</Main>
-      <Footer />
+      {/* <Footer /> */}
     </Container>
   )
 }
