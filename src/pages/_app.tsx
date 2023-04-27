@@ -1,4 +1,4 @@
-import { DefaultSeo, NextSeo } from 'next-seo'
+import { DefaultSeo, NextSeo, NextSeoProps } from 'next-seo'
 import type { AppProps } from 'next/app'
 import { useRouter } from 'next/router'
 import { useEffect } from 'react'
@@ -9,9 +9,10 @@ import { isProduction } from '~/config'
 import { MenuStateContextProvider, ThemeProvider } from '~/context'
 import { defaultSeoProps } from '~/data'
 import { GlobalStyles } from '~/theme'
+import { PageProps } from '~/types'
 import { ga } from '~/utils'
 
-export default function App({ Component, pageProps }: AppProps) {
+export default function App({ Component, pageProps }: AppProps<PageProps>) {
   const router = useRouter()
 
   useEffect(() => {
@@ -33,8 +34,8 @@ export default function App({ Component, pageProps }: AppProps) {
       <ThemeProvider>
         <MenuStateContextProvider>
           <GlobalStyles />
-          <Layout path={router.pathname} {...pageProps?.metadata}>
-            <Component {...pageProps} />
+          <Layout path={router.pathname} metadata={pageProps.metadata}>
+            <Component {...pageProps.pageData} />
           </Layout>
         </MenuStateContextProvider>
       </ThemeProvider>

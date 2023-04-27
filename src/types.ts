@@ -1,3 +1,4 @@
+import { NextSeoProps } from 'next-seo'
 import React from 'react'
 import { IconType } from 'react-icons/lib'
 
@@ -7,6 +8,15 @@ interface ReactChildren {
 }
 
 export type ReactFC<T> = React.FC<T & ReactChildren>
+
+// Layout Props
+
+export interface PageMetadata {
+  path: string
+  title?: string
+  description?: string
+  image?: string
+}
 
 // Header
 export type HeaderComponent = ReactFC<{ path: string }>
@@ -30,10 +40,12 @@ export interface SocialItem {
 
 // Main
 
-interface MainProps {
-  title?: string
-  description?: string
-  image?: string
-}
+type MainProps = Omit<PageMetadata, 'path'>
 
 export type MainComponent = ReactFC<MainProps>
+
+export interface PageProps {
+  seo?: NextSeoProps
+  metadata: PageMetadata
+  pageData: any
+}
