@@ -1,12 +1,8 @@
-import type { AppProps } from 'next/app'
 import { DefaultSeo, NextSeo } from 'next-seo'
+import type { AppProps } from 'next/app'
 import { defaultSeoProps } from '~/data'
+import GlobalLayout from '~/layout/global'
 import { GlobalStyles } from '~/styles'
-import { Container, mainStyles } from '~/components/Container'
-import { Header, InProgress } from '~/components'
-import '@fontsource/inconsolata'
-import '@fontsource/inconsolata/500.css'
-import '@fontsource/inconsolata/600.css'
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
@@ -14,9 +10,9 @@ export default function App({ Component, pageProps }: AppProps) {
       <DefaultSeo {...defaultSeoProps} />
       <NextSeo />
       <GlobalStyles />
-      <Container as="main" css={mainStyles}>
+      <GlobalLayout>
         <Component {...pageProps} />
-      </Container>
+      </GlobalLayout>
     </>
   )
 }
