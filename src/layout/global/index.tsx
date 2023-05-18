@@ -1,5 +1,4 @@
-import { Header } from '~/components'
-import { Container as Main } from '~/layout/global/components/Container'
+import { Container as Main, Header, Footer } from '~/layout/global/components'
 import { ReactFCWithChildren } from '~/types'
 
 export default function GlobalLayout(props: ReactFCWithChildren) {
@@ -7,7 +6,7 @@ export default function GlobalLayout(props: ReactFCWithChildren) {
     <>
       <Header />
       <Main as="main">{props.children}</Main>
-      {/* <Footer /> */}
+      <Footer />
     </>
   )
 }

@@ -19,7 +19,7 @@ const styles = css`
     color: #f7f1e5;
     background: #20262e;
     line-height: 1.5;
-    font-family: 'Inconsolata', 'Courier New', Courier, monospace;
+    font-family: 'Instrument Sans', 'Courier New', Courier, monospace;
   }
 
   a {

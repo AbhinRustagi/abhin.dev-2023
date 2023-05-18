@@ -39,51 +39,15 @@ const wrapperStyles = css`
   }
 `
 
-interface MenuItem {
-  name: string
-  path: string
-}
-
-const menuItems: MenuItem[] = [
-  {
-    name: 'work',
-    path: '/#work',
-  },
-  {
-    name: 'me',
-    path: '/me',
-  },
-  {
-    name: 'blog',
-    path: '/blog',
-  },
-  {
-    name: 'misc',
-    path: '/misc',
-  },
-  {
-    name: 'links',
-    path: '/links',
-  },
-  {
-    name: 'contact',
-    path: '#contact',
-  },
-]
-
 export const Header = () => {
   return (
-    <Container as="header" css={wrapperStyles}>
+    // <Container as="header" css={wrapperStyles}>
+    <div>
       <p>Abhin Rustagi</p>
       <nav>
-        <ul>
-          {menuItems.map((item) => (
-            <li key={makeKey(`header-nav-item`, item.name)}>
-              <Link href={item.path}>{item.name}</Link>
-            </li>
-          ))}
-        </ul>
+        <ul></ul>
       </nav>
-    </Container>
+    </div>
+    // </Container>
   )
 }
