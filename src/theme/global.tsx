@@ -26,6 +26,16 @@ const buildStyles = (theme: Theme) =>
     a {
       color: inherit;
       text-decoration: none;
+
+      &.hover {
+        padding: 2px 4px;
+
+        &:hover {
+          background-color: ${theme.colors.grayTranslucent};
+          color: ${theme.colors.title};
+          border-radius: 4px;
+        }
+      }
     }
 
     h1,

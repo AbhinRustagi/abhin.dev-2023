@@ -17,8 +17,7 @@ const HeaderBrand = styled.div`
   font-size: 1.25rem;
   font-weight: 600;
   text-transform: uppercase;
-  border-radius: 4px;
-  padding: 2px 8px;
+  color: ${(props) => props.theme.colors.title};
 `
 
 const NavWrapper = styled.nav``
@@ -32,7 +31,6 @@ const MenuListWrapper = styled.ul`
 
 const MenuListItem = styled.li`
   font-size: 1rem;
-  font-weight: 500;
 
   &:not(:first-of-type) {
     margin-left: 1rem;
@@ -47,7 +45,9 @@ export const Header = () => {
         <MenuListWrapper>
           {HeaderMenu.map((menuItem) => (
             <MenuListItem key={makeKey('header-nav', menuItem.name)}>
-              <Link href={menuItem.path}>{menuItem.name}</Link>
+              <Link className="hover" href={menuItem.path}>
+                {menuItem.name}
+              </Link>
             </MenuListItem>
           ))}
         </MenuListWrapper>

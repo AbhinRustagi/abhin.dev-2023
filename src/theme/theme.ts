@@ -4,6 +4,7 @@ export interface ThemeColors {
   body: string
   cardBackground: string
   gray: string
+  grayTranslucent: string
   graySelection: string
   accent: string
   accentTranslucent: string
@@ -15,16 +16,18 @@ const lightThemeColors: ThemeColors = {
   body: '#6C6C6C',
   cardBackground: '#E6E6E6',
   gray: '#afafaf',
+  grayTranslucent: '',
   graySelection: '#e1e1e1',
   accentTranslucent: '#007cff26',
   accent: '#007cff',
 }
 
 const darkThemeColors: ThemeColors = {
-  background: '#1a1a1a',
+  background: '#0f0f0f',
   title: '#E9E9E9',
   body: '#979797',
   gray: '#515151',
+  grayTranslucent: '#58585887',
   cardBackground: '#222222',
   graySelection: '#2b2b2b',
   accentTranslucent: '#007cff26',
