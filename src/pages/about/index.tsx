@@ -21,12 +21,15 @@ const HeroGridWrapper = styled.div`
 `
 
 const HeroTitleWrapper = styled.div`
-  padding: 1.5rem;
-  border: 4px dashed ${(props) => props.theme.colors.gray};
   flex-grow: 1;
   flex-basis: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   ${mediaQuery.tablet} {
+    padding: 1.5rem;
+    padding-left: 0;
     flex-basis: calc(60% - 1rem);
     flex-grow: 0.6;
   }
