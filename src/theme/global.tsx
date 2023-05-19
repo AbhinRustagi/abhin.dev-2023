@@ -1,65 +1,50 @@
-import { css, Global } from '@emotion/react'
-import { mediaQuery } from './utils'
+import { css, Global, Theme, useTheme } from '@emotion/react'
 
-const styles = css`
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
-  html,
-  body {
-    min-height: 100vh;
-    overflow-x: hidden;
-    scroll-behavior: smooth;
-  }
-
-  body {
-    color: #f7f1e5;
-    background: #20262e;
-    line-height: 1.5;
-    font-family: 'Instrument Sans', 'Courier New', Courier, monospace;
-  }
-
-  a {
-    color: inherit;
-    text-decoration: none;
-  }
-
-  .accent {
-    color: #91d8e4;
-  }
-
-  @media (prefers-color-scheme: dark) {
-    html {
-      color-scheme: dark;
+const buildStyles = (theme: Theme) =>
+  css`
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      transition-duration: 0.2s;
+      transition-property: background-color, color;
     }
-  }
 
-  p {
-    font-size: 1.125rem;
-    margin: 1rem 0;
-  }
-
-  h1,
-  h2,
-  h3,
-  h4 {
-    font-size: 1.125rem;
-  }
-
-  h1 {
-    font-size: 1.25rem;
-  }
-
-  ${mediaQuery.custom(420, 'max')} {
-    p {
-      font-size: 1rem;
+    html,
+    body {
+      scroll-behavior: smooth;
     }
-  }
-`
+
+    body {
+      color: ${theme.colors.body};
+      background: ${theme.colors.background};
+      font-family: Satoshi, system-ui, -apple-system, BlinkMacSystemFont,
+        'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans',
+        'Helvetica Neue', sans-serif;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      color: ${theme.colors.title};
+    }
+
+    @media (prefers-color-scheme: dark) {
+      html {
+        color-scheme: dark;
+      }
+    }
+  `
 
 export const GlobalStyles = () => {
+  const theme = useTheme()
+  const styles = buildStyles(theme)
+
   return <Global styles={styles} />
 }
