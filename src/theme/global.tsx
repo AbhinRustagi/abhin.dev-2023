@@ -18,9 +18,9 @@ const buildStyles = (theme: Theme) =>
     body {
       color: ${theme.colors.body};
       background: ${theme.colors.background};
-      font-family: Satoshi, system-ui, -apple-system, BlinkMacSystemFont,
-        'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans',
-        'Helvetica Neue', sans-serif;
+      font-family: 'Instrument Sans', system-ui, -apple-system,
+        BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
+        'Open Sans', 'Helvetica Neue', sans-serif;
     }
 
     a {
