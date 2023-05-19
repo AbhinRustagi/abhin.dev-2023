@@ -1,5 +1,3 @@
-import { Socials } from '~/components/Socials'
-
 export default function Home() {
   return (
     <>
@@ -12,7 +10,6 @@ export default function Home() {
         personal website. You can find out updated information about me on my
         socials:
       </p>
-      <Socials />
     </>
   )
 }

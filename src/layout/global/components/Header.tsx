@@ -34,7 +34,7 @@ const MenuListItem = styled.li`
   font-size: 1rem;
   font-weight: 500;
 
-  &:not(:first-child) {
+  &:not(:first-of-type) {
     margin-left: 1rem;
   }
 `
