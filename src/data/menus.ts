@@ -23,6 +23,31 @@ export const HeaderMenu = [
 
 export const FooterMenus = [
   {
+    title: 'Social',
+    menu: [
+      {
+        name: 'Email',
+        path: 'mailto:hi@abhin.dev',
+      },
+      {
+        name: 'Linkedin',
+        path: 'https://www.linkedin.com/in/abhinrustagi',
+      },
+      {
+        name: 'Github',
+        path: 'https://www.github.com/AbhinRustagi',
+      },
+      {
+        name: 'Twitter',
+        path: 'https://www.twitter.com/abhinrustagi',
+      },
+      {
+        name: 'Literal',
+        path: 'https://www.literal.club/abhinrustagi',
+      },
+    ],
+  },
+  {
     title: 'Pages',
     menu: HeaderMenu,
   },

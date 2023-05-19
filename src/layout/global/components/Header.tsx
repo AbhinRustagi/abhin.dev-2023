@@ -16,7 +16,7 @@ const wrapperStyles = css`
 const HeaderBrand = styled.div`
   font-size: 1.25rem;
   font-weight: 600;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   color: ${(props) => props.theme.colors.title};
 `
 
@@ -40,7 +40,7 @@ const MenuListItem = styled.li`
 export const Header = () => {
   return (
     <Container as="header" css={wrapperStyles}>
-      <HeaderBrand>ABHIN RUSTAGI</HeaderBrand>
+      <HeaderBrand>Abhin Rustagi</HeaderBrand>
       <NavWrapper>
         <MenuListWrapper>
           {HeaderMenu.map((menuItem) => (

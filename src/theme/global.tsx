@@ -29,6 +29,7 @@ const buildStyles = (theme: Theme) =>
 
       &.hover {
         padding: 2px 4px;
+        margin-left: -4px;
 
         &:hover {
           background-color: ${theme.colors.grayTranslucent};
