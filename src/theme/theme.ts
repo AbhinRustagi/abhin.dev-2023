@@ -16,14 +16,14 @@ const lightThemeColors: ThemeColors = {
   body: '#6C6C6C',
   cardBackground: '#E6E6E6',
   gray: '#afafaf',
-  grayTranslucent: '',
+  grayTranslucent: '#73737330',
   graySelection: '#e1e1e1',
   accentTranslucent: '#007cff26',
   accent: '#007cff',
 }
 
 const darkThemeColors: ThemeColors = {
-  background: '#0f0f0f',
+  background: '#020202',
   title: '#E9E9E9',
   body: '#979797',
   gray: '#515151',

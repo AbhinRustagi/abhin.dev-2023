@@ -7,7 +7,7 @@ import { makeKey } from '~/utils'
 import Link from 'next/link'
 
 const wrapperStyles = css`
-  margin: 4rem auto;
+  margin: 12rem auto 4rem;
 `
 
 const StyledHR = styled.hr`
@@ -88,7 +88,7 @@ export const Footer = () => {
       </FooterMenusWrapper>
       <FooterBottom>
         <div>
-          <Clock format="HH:mm" ticking timezone="Asia/Kolkata" /> local time
+          <Clock format="HH.mm" ticking timezone="Asia/Kolkata" /> local time
           &nbsp;&nbsp;•&nbsp;&nbsp; 0.04g of CO<sub>2</sub> produced
         </div>
         <div>&copy; Abhin Rustagi | All Rights Reserved</div>

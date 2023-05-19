@@ -4,9 +4,19 @@ import styled from '@emotion/styled'
 import { HeaderMenu } from '~/data/menus'
 import { makeKey } from '~/utils'
 import Link from 'next/link'
+import { mediaQuery } from '~/theme'
+
+const StyledHeader = styled.header`
+  background-color: ${(props) => props.theme.colors.background};
+  position: sticky;
+  top: 0;
+  z-index: 9;
+`
 
 const wrapperStyles = css`
-  margin: 2rem auto;
+  margin: 0 auto 4rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 
   display: flex;
   justify-content: space-between;
@@ -39,19 +49,21 @@ const MenuListItem = styled.li`
 
 export const Header = () => {
   return (
-    <Container as="header" css={wrapperStyles}>
-      <HeaderBrand>Abhin Rustagi</HeaderBrand>
-      <NavWrapper>
-        <MenuListWrapper>
-          {HeaderMenu.map((menuItem) => (
-            <MenuListItem key={makeKey('header-nav', menuItem.name)}>
-              <Link className="hover" href={menuItem.path}>
-                {menuItem.name}
-              </Link>
-            </MenuListItem>
-          ))}
-        </MenuListWrapper>
-      </NavWrapper>
-    </Container>
+    <StyledHeader>
+      <Container css={wrapperStyles}>
+        <HeaderBrand>Abhin Rustagi</HeaderBrand>
+        <NavWrapper>
+          <MenuListWrapper>
+            {HeaderMenu.map((menuItem) => (
+              <MenuListItem key={makeKey('header-nav', menuItem.name)}>
+                <Link className="hover" href={menuItem.path}>
+                  {menuItem.name}
+                </Link>
+              </MenuListItem>
+            ))}
+          </MenuListWrapper>
+        </NavWrapper>
+      </Container>
+    </StyledHeader>
   )
 }

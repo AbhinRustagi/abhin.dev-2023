@@ -16,6 +16,7 @@ const buildStyles = (theme: Theme) =>
     }
 
     body {
+      line-height: 1.375;
       color: ${theme.colors.body};
       background: ${theme.colors.background};
       font-family: 'Instrument Sans', system-ui, -apple-system,
@@ -37,12 +38,24 @@ const buildStyles = (theme: Theme) =>
           border-radius: 4px;
         }
       }
+
+      &.underline {
+        text-decoration: underline;
+      }
+
+      &.ext {
+        ::after {
+          content: ' 🔗';
+        }
+      }
     }
 
     h1,
     h2,
     h3,
     h4 {
+      line-height: 1.625;
+      font-weight: 600;
       color: ${theme.colors.title};
     }
 
