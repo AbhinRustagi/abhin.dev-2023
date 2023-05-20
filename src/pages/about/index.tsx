@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { ContentContainer } from '~/components'
+import { aboutImages } from '~/data/about'
 import {
   HeroGridWrapper,
   HeroImageWrapper,
@@ -19,22 +20,19 @@ const AboutHero = () => {
             intuitive digital products through creative problem-solving.
           </h1>
         </HeroTitleWrapper>
-        <HeroImageWrapper>
-          <Image
-            src="/portrait.jpeg"
-            alt=""
-            fill
-            style={{ objectFit: 'cover' }}
-          />
-        </HeroImageWrapper>
-        <HeroImageWrapper>
-          <Image
-            src="/mountain.jpg"
-            alt=""
-            fill
-            style={{ objectFit: 'cover' }}
-          />
-        </HeroImageWrapper>
+        {aboutImages.map((image) => (
+          <HeroImageWrapper key={image.alt}>
+            <Image
+              src={image.src}
+              alt={image.alt}
+              fill
+              style={{
+                objectFit: 'cover',
+                objectPosition: image.position,
+              }}
+            />
+          </HeroImageWrapper>
+        ))}
       </HeroGridWrapper>
     </HeroWrapper>
   )
