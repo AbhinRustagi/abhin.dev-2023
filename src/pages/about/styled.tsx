@@ -77,4 +77,24 @@ export const contentContainerStyles = css`
   p {
     margin: 1.5rem 0;
   }
+
+  h2 {
+    font-size: 1.25rem;
+    margin: 3rem 0 0;
+  }
+
+  ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+
+    li {
+      width: 50%;
+      margin-top: 1rem;
+
+      ${mediaQuery.tablet} {
+        width: 30%;
+      }
+    }
+  }
 `
