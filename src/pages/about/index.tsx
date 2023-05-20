@@ -1,77 +1,13 @@
-import { css } from '@emotion/react'
-import styled from '@emotion/styled'
 import Image from 'next/image'
 import Link from 'next/link'
 import { ContentContainer } from '~/components'
-import { mediaQuery } from '~/theme'
-
-const HeroWrapper = styled.section`
-  margin-bottom: 6rem;
-`
-
-const HeroGridWrapper = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  flex-direction: column-reverse;
-
-  ${mediaQuery.tablet} {
-    flex-direction: row;
-  }
-`
-
-const HeroTitleWrapper = styled.div`
-  flex-grow: 1;
-  flex-basis: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  ${mediaQuery.tablet} {
-    padding: 1.5rem;
-    padding-left: 0;
-    flex-basis: calc(60% - 1rem);
-    flex-grow: 0.6;
-  }
-
-  ${mediaQuery.desktop} {
-    flex-basis: calc(50% - 1rem);
-    flex-grow: 0.5;
-  }
-`
-
-const baseImageWrapperStyles = css`
-  position: relative;
-  border-radius: 4px;
-  overflow: hidden;
-`
-
-const HeroImageWrapper = styled.div`
-  ${baseImageWrapperStyles}
-  flex-grow: 1;
-  flex-basis: 100%;
-  min-height: 16rem;
-
-  &:last-of-type {
-    display: none;
-  }
-
-  ${mediaQuery.tablet} {
-    flex-basis: calc(40% - 1rem);
-    flex-grow: 0.4;
-    min-height: 12rem;
-    max-height: 16rem;
-  }
-
-  ${mediaQuery.desktop} {
-    flex-basis: calc(25% - 1rem);
-    flex-grow: 0.25;
-
-    &:last-of-type {
-      display: block;
-    }
-  }
-`
+import {
+  HeroGridWrapper,
+  HeroImageWrapper,
+  HeroTitleWrapper,
+  HeroWrapper,
+  contentContainerStyles,
+} from './styled'
 
 const AboutHero = () => {
   return (
@@ -103,15 +39,6 @@ const AboutHero = () => {
     </HeroWrapper>
   )
 }
-
-const contentContainerStyles = css`
-  margin: 0;
-  line-height: 1.75;
-
-  p {
-    margin: 1.5rem 0;
-  }
-`
 
 const AboutContent = () => {
   return (
@@ -145,6 +72,8 @@ const AboutContent = () => {
           <Link
             className="hover underline"
             href="https://openhouse.study?ref=abhin.dev"
+            target="_blank"
+            rel="noopener"
           >
             Openhouse
           </Link>
@@ -156,6 +85,8 @@ const AboutContent = () => {
           <Link
             className="hover underline"
             href="https://www.sneakerinvestindia.com/?ref=abhin.dev"
+            target="_blank"
+            rel="noopener"
           >
             Sneaker Invest India
           </Link>
@@ -163,6 +94,8 @@ const AboutContent = () => {
           <Link
             className="hover underline"
             href="https://www.linkedin.com/company/codee-app/"
+            target="_blank"
+            rel="noopener"
           >
             Codee
           </Link>
@@ -170,6 +103,8 @@ const AboutContent = () => {
           <Link
             className="hover underline"
             href="https://www.timelyai.com/?ref=abhin.dev"
+            target="_blank"
+            rel="noopener"
           >
             TimelyAI
           </Link>
@@ -177,6 +112,8 @@ const AboutContent = () => {
           <Link
             className="hover underline"
             href="https://blueoceanglobaltech.com/?ref=abhin.dev"
+            target="_blank"
+            rel="noopener"
           >
             Blue Ocean Global Tech (NY)
           </Link>
@@ -184,6 +121,8 @@ const AboutContent = () => {
           <Link
             className="hover underline"
             href="https://wetlands.org/?ref=abhin.dev"
+            target="_blank"
+            rel="noopener"
           >
             Wetlands International
           </Link>
@@ -191,6 +130,8 @@ const AboutContent = () => {
           <Link
             className="hover underline"
             href="https://reworld.eco/?ref=abhin.dev"
+            target="_blank"
+            rel="noopener"
           >
             ReWorld Earth
           </Link>
@@ -202,7 +143,12 @@ const AboutContent = () => {
         </p>
         <p>
           Find an exhaustive{' '}
-          <Link href="" className="hover underline ext">
+          <Link
+            href=""
+            target="_blank"
+            rel="noopener"
+            className="hover underline ext"
+          >
             resume here
           </Link>
           .
@@ -233,7 +179,12 @@ const AboutContent = () => {
           the values I follow.
         </p>
         <p>
-          <Link href="" className="underline hover ext">
+          <Link
+            href=""
+            target="_blank"
+            rel="noopener"
+            className="underline hover ext"
+          >
             You can read it here
           </Link>
         </p>
