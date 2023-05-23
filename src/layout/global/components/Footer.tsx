@@ -5,6 +5,8 @@ import Clock from 'react-live-clock'
 import { FooterMenus } from '~/data/menus'
 import { makeKey } from '~/utils'
 import Link from 'next/link'
+import { mediaQuery } from '~/theme'
+import { config } from '~/data'
 
 const wrapperStyles = css`
   margin: 12rem auto 4rem;
@@ -40,11 +42,11 @@ const FooterMenuWrapper = styled.div`
   min-width: 8rem;
 
   &:not(:last-of-type) {
-    margin-right: 3rem;
+    margin-bottom: 2rem;
   }
 
   &:not(:last-of-type) {
-    margin-bottom: 2rem;
+    margin-right: 2rem;
   }
 `
 
@@ -88,7 +90,7 @@ export const Footer = () => {
       </FooterMenusWrapper>
       <FooterBottom>
         <div>
-          <Clock format="HH.mm" ticking timezone="Asia/Kolkata" /> local time
+          <Clock format="HH.mm" ticking timezone={config.timezone} /> local time
           &nbsp;&nbsp;•&nbsp;&nbsp; 0.04g of CO<sub>2</sub> produced
         </div>
         <div>&copy; Abhin Rustagi | All Rights Reserved</div>
