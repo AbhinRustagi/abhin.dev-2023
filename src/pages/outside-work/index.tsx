@@ -42,24 +42,13 @@ const OutsideWorkHero = () => {
 const Intro = () => {
   return (
     <ContentContainer css={contentContainerStyles}>
+      <p>Last updated 31 May 2023.</p>
       <p>
         My most fulfilling days consist of enjoying delicious food, exploring
         breathtaking destinations, and making memorable moments with friends. I
         have a deep appreciation for photography, trekking through the majestic
         Himalayas, experimenting with coffee, and going on unique travel
         experiences.
-      </p>
-      <p>
-        I came across the YouTube channel{' '}
-        <Link
-          href="https://www.youtube.com/@YesTheory"
-          target="_blank"
-          rel="noopener"
-          className="underline hover"
-        >
-          Yes! Theory
-        </Link>
-        , and it has been difficult to say no to newer experiences since then.
       </p>
     </ContentContainer>
   )
