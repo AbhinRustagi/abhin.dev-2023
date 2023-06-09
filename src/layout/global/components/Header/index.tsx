@@ -9,7 +9,6 @@ import {
   MenuListItem,
   MenuListWrapper,
   NavWrapper,
-  StyledHeader,
   wrapperStyles,
 } from './styled'
 
@@ -17,7 +16,7 @@ export const Header = () => {
   const [isOpen, toggle] = useMenuStateContext()
 
   return (
-    <StyledHeader>
+    <header>
       <Container css={wrapperStyles}>
         <HeaderBrand>Abhin Rustagi</HeaderBrand>
         <MenuBtn onClick={toggle} />
@@ -25,14 +24,12 @@ export const Header = () => {
           <MenuListWrapper>
             {HeaderMenu.map((menuItem) => (
               <MenuListItem key={makeKey('header-nav', menuItem.name)}>
-                <Link className="hover" href={menuItem.path}>
-                  {menuItem.name}
-                </Link>
+                <Link href={menuItem.path}>{menuItem.name}</Link>
               </MenuListItem>
             ))}
           </MenuListWrapper>
         </NavWrapper>
       </Container>
-    </StyledHeader>
+    </header>
   )
 }

@@ -10,41 +10,39 @@ import {
   FooterMenuTitle,
   FooterMenuWrapper,
   FooterMenusWrapper,
-  StyledHR,
-  wrapperStyles,
+  StyledFooter,
 } from './styled'
 
 export const Footer = () => {
   return (
-    <Container as="footer" css={wrapperStyles}>
-      <StyledHR />
-      <FooterMenusWrapper>
-        {FooterMenus.map((menu) => {
-          return (
-            <FooterMenuWrapper key={makeKey('footer-menu', menu.title)}>
-              <FooterMenuTitle>{menu.title}</FooterMenuTitle>
-              <ul>
-                {menu.menu.map((menuItem) => (
-                  <FooterMenuItem
-                    key={makeKey('footer-menu', menu.title, menuItem.name)}
-                  >
-                    <Link className="hover" href={menuItem.path}>
-                      {menuItem.name}
-                    </Link>
-                  </FooterMenuItem>
-                ))}
-              </ul>
-            </FooterMenuWrapper>
-          )
-        })}
-      </FooterMenusWrapper>
-      <FooterBottom>
-        <div>
-          <Clock format="HH.mm" ticking timezone={config.timezone} /> local time
-          &nbsp;&nbsp;•&nbsp;&nbsp; 0.04g of CO<sub>2</sub> produced
-        </div>
-        <div>&copy; Abhin Rustagi | All Rights Reserved</div>
-      </FooterBottom>
-    </Container>
+    <StyledFooter id="contact">
+      <Container>
+        <FooterMenusWrapper>
+          {FooterMenus.map((menu) => {
+            return (
+              <FooterMenuWrapper key={makeKey('footer-menu', menu.title)}>
+                <FooterMenuTitle>{menu.title}</FooterMenuTitle>
+                <ul>
+                  {menu.menu.map((menuItem) => (
+                    <FooterMenuItem
+                      key={makeKey('footer-menu', menu.title, menuItem.name)}
+                    >
+                      <Link href={menuItem.path}>{menuItem.name}</Link>
+                    </FooterMenuItem>
+                  ))}
+                </ul>
+              </FooterMenuWrapper>
+            )
+          })}
+        </FooterMenusWrapper>
+        <FooterBottom>
+          <div>
+            <Clock format="HH.mm" ticking timezone={config.timezone} /> local
+            time &nbsp;&nbsp;•&nbsp;&nbsp; 0.04g of CO<sub>2</sub> produced
+          </div>
+          <div>&copy; Abhin Rustagi | All Rights Reserved</div>
+        </FooterBottom>
+      </Container>
+    </StyledFooter>
   )
 }

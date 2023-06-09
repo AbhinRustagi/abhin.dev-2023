@@ -1,12 +1,12 @@
+import { ThemeProvider as EmotionThemeProvider } from '@emotion/react'
 import { DefaultSeo, NextSeo, NextSeoProps } from 'next-seo'
 import type { AppProps } from 'next/app'
+import { useRouter } from 'next/router'
 import { MenuStateContextProvider } from '~/context/menu'
-import { ThemeProvider } from '~/context/theme'
 import { defaultSeoProps } from '~/data'
 import GlobalLayout from '~/layout/global'
-import { GlobalStyles } from '~/theme'
+import { GlobalStyles, theme } from '~/theme'
 import { buildPageSeo } from '~/utils/seo'
-import { useRouter } from 'next/router'
 
 interface CustomAppProps {
   data: any
@@ -29,14 +29,14 @@ export default function App({
     <>
       <DefaultSeo {...defaultSeoProps} />
       <NextSeo {...pageSeo} />
-      <ThemeProvider>
+      <EmotionThemeProvider theme={theme}>
         <MenuStateContextProvider>
           <GlobalStyles />
           <GlobalLayout>
             <Component {...pageProps.data} />
           </GlobalLayout>
         </MenuStateContextProvider>
-      </ThemeProvider>
+      </EmotionThemeProvider>
     </>
   )
 }

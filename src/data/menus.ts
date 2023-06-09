@@ -17,7 +17,7 @@ export const HeaderMenu = [
   },
   {
     name: 'Contact',
-    path: '/contact',
+    path: '#contact',
   },
 ]
 

@@ -1,15 +1,28 @@
-export default function Home() {
+import { css } from '@emotion/react'
+import styled from '@emotion/styled'
+
+const Wrapper = styled.div`
+  padding: 2rem 0 6rem;
+`
+
+function Hero() {
   return (
-    <>
-      <h1>Work in Progress 👨🏽‍💻</h1>
+    <Wrapper>
+      <h1>
+        An engineer with a love for developing user-first and accessible digital
+        products.
+      </h1>
       <br />
-      <h2 className="accent">Hello, there. I am Abhin. 👋</h2>
       <p>
-        I am a software engineer, with 2 years of experience. I enjoy developing
-        user-focused products. I am currently building the newer version of my
-        personal website. You can find out updated information about me on my
-        socials:
+        I&apos;m a software engineer who is always open to opportunities to
+        positively improve the human life on scale. With 2 years of experience
+        working as a software engineer, the ability to create or innovate still
+        excites me just as much as it did when I started.
       </p>
-    </>
+    </Wrapper>
   )
+}
+
+export default function Home() {
+  return <Hero />
 }
