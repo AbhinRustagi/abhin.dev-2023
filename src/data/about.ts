@@ -10,3 +10,7 @@ export const aboutImages = [
     position: 'top',
   },
 ]
+
+export const seo = {
+  title: 'About',
+}

@@ -52,3 +52,7 @@ export const imageGridConfig = [
     alt: 'a man looking at stars at night',
   },
 ]
+
+export const seo = {
+  title: 'Outside Work',
+}
