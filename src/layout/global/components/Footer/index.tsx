@@ -1,68 +1,18 @@
-import { css } from '@emotion/react'
-import { Container } from './Container'
-import styled from '@emotion/styled'
+import Link from 'next/link'
 import Clock from 'react-live-clock'
+import { config } from '~/data'
 import { FooterMenus } from '~/data/menus'
 import { makeKey } from '~/utils'
-import Link from 'next/link'
-import { mediaQuery } from '~/theme'
-import { config } from '~/data'
-
-const wrapperStyles = css`
-  margin: 12rem auto 4rem;
-`
-
-const StyledHR = styled.hr`
-  margin-bottom: 3rem;
-  border: none;
-  height: 1px;
-  width: 100%;
-  background-color: gray;
-`
-
-const FooterBottom = styled.div`
-  margin-top: 3rem;
-  padding-top: 2rem;
-  border-top: 3px dotted ${(props) => props.theme.colors.grayTranslucent};
-  font-size: 0.875rem;
-
-  & div {
-    &:first-of-type {
-      margin-bottom: 0.5rem;
-    }
-  }
-`
-
-const FooterMenusWrapper = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-`
-
-const FooterMenuWrapper = styled.div`
-  min-width: 8rem;
-
-  &:not(:last-of-type) {
-    margin-bottom: 2rem;
-  }
-
-  &:not(:last-of-type) {
-    margin-right: 2rem;
-  }
-`
-
-const FooterMenuItem = styled.li`
-  list-style: none;
-  padding: 0;
-  margin-bottom: 0.5rem;
-  font-size: 0.875rem;
-`
-
-const FooterMenuTitle = styled.div`
-  font-weight: 500;
-  color: ${(props) => props.theme.colors.title};
-  margin-bottom: 1rem;
-  font-size: 1rem;
-`
+import { Container } from '../Container'
+import {
+  FooterBottom,
+  FooterMenuItem,
+  FooterMenuTitle,
+  FooterMenuWrapper,
+  FooterMenusWrapper,
+  StyledHR,
+  wrapperStyles,
+} from './styled'
 
 export const Footer = () => {
   return (
