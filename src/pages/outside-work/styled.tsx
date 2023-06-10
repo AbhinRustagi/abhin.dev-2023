@@ -61,7 +61,6 @@ export const HeroImageWrapper = styled.div<{
 
 export const contentContainerStyles = css`
   margin: 0;
-  line-height: 1.75;
 
   p {
     margin: 1.5rem 0;

@@ -4,11 +4,15 @@ import { mediaQuery } from '~/theme'
 export const Hero = {
   wrapper: styled.section`
     display: flex;
-    flex-direction: column-reverse;
-    justify-content: space-evenly;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 6rem;
+    margin-bottom: 6rem;
+    border-bottom: 1px solid ${(props) => props.theme.colors.grayTranslucent};
 
     ${mediaQuery.tablet} {
-      padding: 2rem 0 6rem;
+      margin-top: 2rem;
       flex-direction: row;
     }
   `,
@@ -17,8 +21,12 @@ export const Hero = {
     margin-bottom: 2rem;
     height: max-content;
 
+    p {
+      margin-bottom: 1rem;
+    }
+
     ${mediaQuery.tablet} {
-      width: 30rem;
+      width: 32rem;
       margin-bottom: 0;
       margin-right: 2rem;
     }

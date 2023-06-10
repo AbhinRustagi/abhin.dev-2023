@@ -1,6 +1,6 @@
 import Image from 'next/image'
-import { Hero } from './styled'
 import Link from 'next/link'
+import { Hero } from './styled'
 
 function HeroSection() {
   return (
@@ -18,9 +18,8 @@ function HeroSection() {
           still excites me just as much as it did when I started.
         </p>
         <p>
-          <Link href="/about" className="hover underline">
-            Learn about me →
-          </Link>
+          I&apos;m currently pursuing my Masters in Information Technology from
+          the University of Melbourne, Australia.
         </p>
       </Hero.content>
       <Hero.image>

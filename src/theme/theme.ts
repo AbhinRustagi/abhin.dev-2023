@@ -1,4 +1,5 @@
 export interface ThemeColors {
+  accent: '#006de1'
   background: string
   title: string
   body: string
@@ -10,6 +11,7 @@ export interface ThemeColors {
 }
 
 const themeColors: ThemeColors = {
+  accent: '#006de1',
   background: '#f4f4f4',
   title: '#040404',
   body: '#282828',

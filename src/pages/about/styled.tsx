@@ -4,9 +4,6 @@ import { mediaQuery } from '~/theme'
 
 export const HeroWrapper = styled.section`
   margin-bottom: 6rem;
-`
-
-export const HeroGridWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
@@ -14,26 +11,19 @@ export const HeroGridWrapper = styled.div`
 
   ${mediaQuery.tablet} {
     flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: nowrap;
   }
 `
 
-export const HeroTitleWrapper = styled.div`
-  flex-grow: 1;
-  flex-basis: 100%;
+export const ImagesWrapper = styled.div`
   display: flex;
-  align-items: center;
-  justify-content: center;
+  width: 100%;
+  flex-direction: column;
+  height: max-content;
 
   ${mediaQuery.tablet} {
-    padding: 1.5rem;
-    padding-left: 0;
-    flex-basis: calc(60% - 1rem);
-    flex-grow: 0.6;
-  }
-
-  ${mediaQuery.desktop} {
-    flex-basis: calc(50% - 1rem);
-    flex-grow: 0.5;
+    max-width: 16rem;
   }
 `
 
@@ -47,7 +37,7 @@ export const HeroImageWrapper = styled.div`
   ${baseImageWrapperStyles}
   flex-grow: 1;
   flex-basis: 100%;
-  min-height: 16rem;
+  min-height: 20rem;
 
   &:last-of-type {
     display: none;
@@ -58,21 +48,23 @@ export const HeroImageWrapper = styled.div`
     flex-grow: 0.4;
     min-height: 12rem;
     max-height: 16rem;
+
+    &:last-of-type {
+      margin-top: 1rem;
+      display: block;
+    }
   }
 
   ${mediaQuery.desktop} {
     flex-basis: calc(25% - 1rem);
     flex-grow: 0.25;
-
-    &:last-of-type {
-      display: block;
-    }
+    min-height: 16rem;
   }
 `
 
 export const contentContainerStyles = css`
   margin: 0;
-  line-height: 1.75;
+  max-width: 32rem;
 
   p {
     margin: 1.5rem 0;

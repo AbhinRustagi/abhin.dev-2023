@@ -22,6 +22,7 @@ export const Header = () => {
         <MenuBtn onClick={toggle} />
         <NavWrapper isOpen={isOpen}>
           <MenuListWrapper>
+            {/* TODO: Add Bookshelf */}
             {HeaderMenu.map((menuItem) => (
               <MenuListItem key={makeKey('header-nav', menuItem.name)}>
                 <Link href={menuItem.path}>{menuItem.name}</Link>

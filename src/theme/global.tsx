@@ -10,13 +10,12 @@ const buildStyles = (theme: Theme) =>
       transition-property: background-color, color;
     }
 
-    html,
-    body {
+    html {
       scroll-behavior: smooth;
     }
 
     body {
-      line-height: 1.5;
+      line-height: 1.75;
       color: ${theme.colors.body};
       background: ${theme.colors.background};
       font-family: 'Instrument Sans', system-ui, -apple-system,
@@ -42,6 +41,14 @@ const buildStyles = (theme: Theme) =>
 
       &.underline {
         text-decoration: underline;
+      }
+
+      &.accent {
+        color: ${theme.colors.accent};
+      }
+
+      &.strong {
+        font-weight: 500;
       }
 
       &.ext {

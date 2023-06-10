@@ -11,11 +11,19 @@ export const Button = styled(Link)`
   width: max-content;
 
   ${(props) => {
-    const bg = props.theme.colors.title
+    const bg = props.theme.colors.accent
     const color = props.theme.colors.background
     return css`
       background-color: ${bg};
       color: ${color};
     `
   }};
+
+  &:hover {
+    background-image: linear-gradient(
+      to right,
+      rgb(0, 0, 0, 0.2),
+      rgb(0, 0, 0, 0.2)
+    );
+  }
 `

@@ -1,5 +1,6 @@
 import { Theme, css } from '@emotion/react'
 import styled from '@emotion/styled'
+import { mediaQuery } from '~/theme'
 
 export const StyledFooter = styled.footer`
   margin-top: 4rem;
@@ -10,8 +11,23 @@ export const StyledFooter = styled.footer`
     const color = props.theme.colors.title
     return css`
       color: ${color};
+      border-top: 1px solid ${props.theme.colors.grayTranslucent};
     `
   }}
+`
+
+export const FooterTop = styled.div`
+  h2 {
+    margin-bottom: 2rem;
+  }
+
+  p {
+    margin: 1rem 0;
+  }
+
+  ${mediaQuery.tablet} {
+    max-width: 32rem;
+  }
 `
 
 export const FooterBottom = styled.div`
@@ -21,41 +37,8 @@ export const FooterBottom = styled.div`
   font-size: 0.875rem;
 
   & div {
-    &:first-of-type {
+    &:not(:last-child) {
       margin-bottom: 0.5rem;
     }
   }
-`
-
-export const FooterMenusWrapper = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-`
-
-export const FooterMenuWrapper = styled.div`
-  min-width: 8rem;
-
-  &:not(:last-of-type) {
-    margin-bottom: 2rem;
-  }
-
-  &:not(:last-of-type) {
-    margin-right: 2rem;
-  }
-`
-
-export const FooterMenuItem = styled.li`
-  list-style: none;
-  padding: 0;
-  margin-bottom: 0.5rem;
-  font-size: 1rem;
-  font-weight: 500;
-`
-
-export const FooterMenuTitle = styled.div`
-  font-weight: 600;
-  text-transform: uppercase;
-  color: ${(props) => props.theme.colors.graySelection};
-  margin-bottom: 1rem;
-  font-size: 0.875rem;
 `
