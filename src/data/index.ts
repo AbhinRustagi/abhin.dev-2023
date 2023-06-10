@@ -1,1 +1,7 @@
+export * as aboutPageData from './about'
+export * as blogPageData from './blog'
+export * as config from './config'
+export * as menusData from './menus'
+export * as outsideWorkData from './outside-work'
 export * from './seo'
+export * as workData from './work'

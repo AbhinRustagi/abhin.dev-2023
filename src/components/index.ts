@@ -1,5 +1,2 @@
-export * from './Container'
-export * from './Header'
-export * from './InProgress'
-export * from './Socials'
-export * from './WorkItem'
+export * from './Card'
+export * from './ContentContainer'

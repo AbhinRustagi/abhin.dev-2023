@@ -1,11 +1,4 @@
-import Script from 'next/script'
-import { WorkItem, WorkItemsWrapper } from '~/components'
-
-import { Socials } from '~/components/Socials'
-import { workItems } from '~/data/work'
-import { makeKey } from '~/utils'
-
-export default function Home() {
+export default function UsesPage() {
   return (
     <>
       <h1>Work in Progress 👨🏽‍💻</h1>
@@ -17,7 +10,6 @@ export default function Home() {
         personal website. You can find out updated information about me on my
         socials:
       </p>
-      <Socials />
     </>
   )
 }
