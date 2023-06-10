@@ -34,7 +34,7 @@ const buildStyles = (theme: Theme) =>
         display: inline-block;
 
         &:hover {
-          background-color: ${theme.colors.gray};
+          background-color: ${theme.colors.grayTranslucent};
           color: ${theme.colors.title};
           border-radius: 4px;
         }

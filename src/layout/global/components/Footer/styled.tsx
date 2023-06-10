@@ -2,7 +2,7 @@ import { Theme, css } from '@emotion/react'
 import styled from '@emotion/styled'
 
 export const StyledFooter = styled.footer`
-  margin-top: 8rem;
+  margin-top: 4rem;
   padding-top: 4rem;
   padding-bottom: 4rem;
 
