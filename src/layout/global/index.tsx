@@ -1,11 +1,14 @@
 import { ReactFCWithChildren } from '~/types'
-import { Container, Footer, Header } from './components'
+import { Container, Footer, Header, WorkInProgress } from './components'
 
 export default function GlobalLayout(props: ReactFCWithChildren) {
   return (
     <>
       <Header />
-      <Container as="main">{props.children}</Container>
+      <Container as="main">
+        <WorkInProgress />
+        {props.children}
+      </Container>
       <Footer />
     </>
   )

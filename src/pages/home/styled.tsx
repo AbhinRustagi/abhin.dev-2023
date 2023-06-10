@@ -46,3 +46,9 @@ export const Hero = {
     font-size: 1.625rem;
   `,
 }
+
+export const WorkTimeline = {
+  wrapper: styled.section`
+    margin: 6rem 0;
+  `,
+}

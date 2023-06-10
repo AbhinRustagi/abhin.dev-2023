@@ -1,6 +1,5 @@
 import Image from 'next/image'
-import Link from 'next/link'
-import { Hero } from './styled'
+import { Hero, WorkTimeline } from './styled'
 
 function HeroSection() {
   return (
@@ -34,10 +33,19 @@ function HeroSection() {
   )
 }
 
+function WorkTimelineSection() {
+  return (
+    <WorkTimeline.wrapper>
+      <h2>Work Timeline</h2>
+    </WorkTimeline.wrapper>
+  )
+}
+
 export default function Home() {
   return (
     <>
       <HeroSection />
+      <WorkTimelineSection />
     </>
   )
 }

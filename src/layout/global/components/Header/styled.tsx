@@ -7,7 +7,7 @@ export const wrapperStyles = css`
   margin: 0 auto;
   padding-top: 2rem;
   padding-bottom: 2rem;
-  margin-bottom: 4rem;
+  margin-bottom: 1rem;
 
   display: flex;
   justify-content: space-between;
