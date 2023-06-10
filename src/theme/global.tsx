@@ -16,7 +16,7 @@ const buildStyles = (theme: Theme) =>
     }
 
     body {
-      line-height: 1.375;
+      line-height: 1.5;
       color: ${theme.colors.body};
       background: ${theme.colors.background};
       font-family: 'Instrument Sans', system-ui, -apple-system,
@@ -31,9 +31,10 @@ const buildStyles = (theme: Theme) =>
       &.hover {
         padding: 2px 4px;
         margin-left: -4px;
+        display: inline-block;
 
         &:hover {
-          background-color: ${theme.colors.grayTranslucent};
+          background-color: ${theme.colors.gray};
           color: ${theme.colors.title};
           border-radius: 4px;
         }

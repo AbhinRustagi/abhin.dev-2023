@@ -1,7 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { ContentContainer, Container } from '~/components'
+import { ContentContainer } from '~/components'
 import { aboutImages } from '~/data/about'
 import {
   HeroGridWrapper,
