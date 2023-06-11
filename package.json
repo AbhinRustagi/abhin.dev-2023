@@ -36,7 +36,7 @@
   "devDependencies": {
     "@commitlint/cli": "^17.4.4",
     "@commitlint/config-conventional": "^17.4.4",
-    "@emotion/babel-plugin": "^11.10.6",
+    "@emotion/babel-plugin": "^11.11.0",
     "@types/lodash": "^4.14.191",
     "@types/mixpanel-browser": "^2.38.1",
     "@types/node": "18.14.6",
