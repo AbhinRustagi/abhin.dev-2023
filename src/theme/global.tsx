@@ -53,7 +53,7 @@ const buildStyles = (theme: Theme) =>
 
       &.ext {
         ::after {
-          content: ' 🔗';
+          content: ' ↗';
         }
       }
     }

@@ -1,5 +1,8 @@
 import Image from 'next/image'
 import { Hero, WorkTimeline } from './styled'
+import { workData } from '~/data'
+import { ProjectCard } from '~/components'
+import { makeKey } from '~/utils'
 
 function HeroSection() {
   return (
@@ -15,10 +18,6 @@ function HeroSection() {
           positively improve the human life on scale. With 2 years of experience
           working as a software engineer, the ability to create or innovate
           still excites me just as much as it did when I started.
-        </p>
-        <p>
-          I&apos;m currently pursuing my Masters in Information Technology from
-          the University of Melbourne, Australia.
         </p>
       </Hero.content>
       <Hero.image>
@@ -37,6 +36,14 @@ function WorkTimelineSection() {
   return (
     <WorkTimeline.wrapper>
       <h2>Work Timeline</h2>
+      <p>A few accounts of the work I have been doing</p>
+      <WorkTimeline.gridWrapper>
+        {workData.workTimeline.map((workItem) => (
+          <WorkTimeline.StyledListItem key={makeKey('work', workItem.title)}>
+            <ProjectCard {...workItem} />
+          </WorkTimeline.StyledListItem>
+        ))}
+      </WorkTimeline.gridWrapper>
     </WorkTimeline.wrapper>
   )
 }

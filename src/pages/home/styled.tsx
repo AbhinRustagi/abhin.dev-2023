@@ -1,3 +1,4 @@
+import { css } from '@emotion/react'
 import styled from '@emotion/styled'
 import { mediaQuery } from '~/theme'
 
@@ -50,5 +51,21 @@ export const Hero = {
 export const WorkTimeline = {
   wrapper: styled.section`
     margin: 6rem 0;
+  `,
+  gridWrapper: styled.ul`
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+    list-style: none;
+  `,
+  StyledListItem: styled.li`
+    margin-bottom: 2rem;
+
+    ${mediaQuery.tablet} {
+      width: calc(50% - 1rem);
+      &:nth-child(2n - 1) {
+        margin-right: 2rem;
+      }
+    }
   `,
 }
